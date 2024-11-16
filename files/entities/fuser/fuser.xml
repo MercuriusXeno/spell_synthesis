@@ -1,0 +1,6 @@
+<Entity>
+	<LuaComponent
+		script_source_file="mods/spell_synthesis/files/entities/fuser/fuser.lua"
+		execute_every_n_frame="1">
+	</LuaComponent>
+</Entity>
