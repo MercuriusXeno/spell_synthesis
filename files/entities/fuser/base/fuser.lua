@@ -12,6 +12,7 @@ if fuser.fusing then
 		if not children then
 			local component = GetUpdatedComponentID()
 			EntitySetComponentIsEnabled(entity, component, false)
+			EntityLoad("data/entities/projectiles/thunderball.xml", x - 1, y - 2)
 		else
 			EntityKill(children[1])
 		end
@@ -41,6 +42,5 @@ function enabled_changed(entity_id, is_enabled)
 end
 
 function death(_, _, _, _)
-	print("death!!1")
 	fuser:fuse_cancel()
 end
