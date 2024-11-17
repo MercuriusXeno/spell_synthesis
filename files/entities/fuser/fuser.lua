@@ -4,7 +4,7 @@ local entity = GetUpdatedEntityID()
 local x, y = EntityGetTransform(entity)
 
 if GetValueBool("fusing", false) then
-	fuser:fuse_spells(x, y + 9)
+	fuser:fuse_spells(x + 0.5, y + 9)
 	-- If fusing was finished
 	if not fuser.fusing then
 		SetValueBool("fusing", false)

@@ -5,14 +5,14 @@
 	</LuaComponent>
 	<LuaComponent
 		script_source_file="mods/spell_synthesis/files/entities/fuser/fuser_create.lua"
-		remove_after_executed="1">
+		execute_every_n_frame="30">
 	</LuaComponent>
 
 	<PixelSpriteComponent
 		image_file="mods/spell_synthesis/files/entities/fuser/gfx/anvil_sprite.png"
 		material="steel"
-		anchor_x="12.5"
-		anchor_y="12.5"
+		anchor_x="12"
+		anchor_y="12"
 		create_box2d_bodies="1">
 	</PixelSpriteComponent>
 
