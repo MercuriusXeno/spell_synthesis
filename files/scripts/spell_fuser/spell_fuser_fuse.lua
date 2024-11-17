@@ -17,20 +17,18 @@ local fuser = {
 }
 
 --- Cancels fusion
---- @private
 function fuser:fuse_cancel()
+	self.fusing = false
+	if not self.current_fusion then return end
 	for i = 1, #self.current_fusion.entities do
 		local entity = self.current_fusion.entities[i]
 		local item_action_component = EntityGetFirstComponent(entity, "ItemActionComponent")
 		if item_action_component then
 			local velocity_component = EntityGetFirstComponentIncludingDisabled(entity, "VelocityComponent")
-			if velocity_component then
-				EntitySetComponentIsEnabled(entity, velocity_component, true)
-			end
+			if velocity_component then EntitySetComponentIsEnabled(entity, velocity_component, true) end
 		end
 	end
 	self.current_fusion = nil
-	self.fusing = false
 end
 
 --- Checks if spells are still in world
@@ -90,9 +88,7 @@ end
 --- @param target_x number
 --- @param target_y number
 function fuser:fuse_spells(target_x, target_y)
-	if not self:is_spells_still_present() then
-		return
-	end
+	if not self:is_spells_still_present() then return end
 
 	self.current_fusion.step = self.current_fusion.step + 1
 	if self.current_fusion.step < self.steps.up then
@@ -122,9 +118,7 @@ function fuser:start_fusing(result, entities)
 	for i = 1, #entities do
 		local entity = entities[i]
 		local velocity_component = EntityGetFirstComponent(entity, "VelocityComponent")
-		if velocity_component then
-			EntitySetComponentIsEnabled(entity, velocity_component, false)
-		end
+		if velocity_component then EntitySetComponentIsEnabled(entity, velocity_component, false) end
 	end
 	self.fusing = true
 end

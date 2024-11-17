@@ -1,0 +1,7 @@
+<Entity name="fuser">
+	<Base file="mods/spell_synthesis/files/entities/fuser/base/fuser.xml" include_children="1"></Base>
+	<VariableStorageComponent
+		name="offset_y"
+		value_float="60">
+	</VariableStorageComponent>
+</Entity>

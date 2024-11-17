@@ -13,6 +13,7 @@ local fuser = {
 	recipes = dofile_once("mods/spell_synthesis/files/spells/recipes.lua"),
 	cache = cache,
 	radius = 30,
+	offset_y = 30,
 	fusing = false,
 }
 
@@ -54,7 +55,7 @@ end
 --- @param y number
 --- @return ss_fusion_recipe|nil, entity_id[]  -- returns matched recipe and matching entity IDs
 function fuser:scan_for_recipe(x, y)
-	local spells, action_cards = self:get_spells(x, y + 30)
+	local spells, action_cards = self:get_spells(x, y)
 	for i = 1, #action_cards do
 		self:apply_hint_particle(action_cards[i])
 	end

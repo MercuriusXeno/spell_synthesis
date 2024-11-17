@@ -1,11 +1,13 @@
 <Entity name="fuser">
 	<LuaComponent
-		script_source_file="mods/spell_synthesis/files/entities/fuser/fuser.lua"
-		execute_every_n_frame="1">
-	</LuaComponent>
-	<LuaComponent
-		script_source_file="mods/spell_synthesis/files/entities/fuser/fuser_create.lua"
-		execute_every_n_frame="30">
+		script_source_file="mods/spell_synthesis/files/entities/fuser/base/fuser.lua"
+		script_enabled_changed="mods/spell_synthesis/files/entities/fuser/base/fuser.lua"
+		script_death="mods/spell_synthesis/files/entities/fuser/base/fuser.lua"
+		execute_every_n_frame="1"
+		execute_on_added="1"
+		call_init_function="1"
+		execute_on_removed="1"
+		vm_type="ONE_PER_COMPONENT_INSTANCE">
 	</LuaComponent>
 
 	<PixelSpriteComponent
@@ -17,7 +19,7 @@
 	</PixelSpriteComponent>
 
 	<Entity name="fuser_light_top">
-		<Base file="mods/spell_synthesis/files/entities/fuser/fuser_light.xml">
+		<Base file="mods/spell_synthesis/files/entities/fuser/base/fuser_light.xml">
 			<SpriteComponent
 				special_scale_x="5">
 			</SpriteComponent>
@@ -35,7 +37,7 @@
 	</Entity>
 
 	<Entity name="fuser_light_bottom">
-		<Base file="mods/spell_synthesis/files/entities/fuser/fuser_light.xml">
+		<Base file="mods/spell_synthesis/files/entities/fuser/base/fuser_light.xml">
 			<SpriteComponent
 				special_scale_x="5">
 			</SpriteComponent>
@@ -53,7 +55,7 @@
 	</Entity>
 
 	<Entity name="fuser_light_left">
-		<Base file="mods/spell_synthesis/files/entities/fuser/fuser_light.xml">
+		<Base file="mods/spell_synthesis/files/entities/fuser/base/fuser_light.xml">
 			<SpriteComponent
 				special_scale_y="5">
 			</SpriteComponent>
@@ -71,7 +73,7 @@
 	</Entity>
 
 	<Entity name="fuser_light_right">
-		<Base file="mods/spell_synthesis/files/entities/fuser/fuser_light.xml">
+		<Base file="mods/spell_synthesis/files/entities/fuser/base/fuser_light.xml">
 			<SpriteComponent
 				special_scale_y="5">
 			</SpriteComponent>

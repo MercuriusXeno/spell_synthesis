@@ -98,7 +98,7 @@ end
 --- @param y number
 --- @return string[], entity_id[]
 function fuser:get_spells(x, y)
-	local action_cards = EntityGetInRadiusWithTag(x, y, self.radius, "card_action")
+	local action_cards = EntityGetInRadiusWithTag(x, y + self.offset_y, self.radius, "card_action")
 	local action_ids = {}
 	local entity_ids = {}
 	for i = 1, #action_cards do
