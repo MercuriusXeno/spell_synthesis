@@ -3,16 +3,9 @@ dofile_once("mods/spell_synthesis/files/spells/append.lua")
 
 --- Blahblah
 function OnPlayerSpawned()
-	LoadPixelScene(
-		"mods/spell_synthesis/files/biomes/debug/debug_scene.png",
-		"mods/spell_synthesis/files/biomes/debug/debug_scene_visual.png",
-		200,
-		-110,
-		"mods/spell_synthesis/files/biomes/debug/debug_scene_bg.png",
-		false,
-		false,
-		{},
-		0,
-		false
-	)
+	if GameHasFlagRun("spell_synthesis_init") then
+		return
+	end
+	GameAddFlagRun("spell_synthesis_init")
+	EntityLoad("mods/spell_synthesis/files/entities/fuser/fuser.xml", 230, -100)
 end

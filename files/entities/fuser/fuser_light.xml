@@ -1,0 +1,15 @@
+<Entity>
+	<SpriteComponent
+		image_file="mods/spell_synthesis/files/entities/fuser/gfx/anvil_light.png"
+		offset_x="0"
+		offset_y="0"
+		additive="1"
+		has_special_scale="1">
+	</SpriteComponent>
+	<LightComponent
+		radius="30"
+		r="255"
+		g="255"
+		b="255">
+	</LightComponent>
+</Entity>

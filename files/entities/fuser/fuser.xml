@@ -1,6 +1,90 @@
-<Entity>
+<Entity name="fuser">
 	<LuaComponent
 		script_source_file="mods/spell_synthesis/files/entities/fuser/fuser.lua"
 		execute_every_n_frame="1">
 	</LuaComponent>
+	<LuaComponent
+		script_source_file="mods/spell_synthesis/files/entities/fuser/fuser_create.lua"
+		remove_after_executed="1">
+	</LuaComponent>
+
+	<PixelSpriteComponent
+		image_file="mods/spell_synthesis/files/entities/fuser/gfx/anvil_sprite.png"
+		material="steel"
+		anchor_x="12.5"
+		anchor_y="12.5"
+		create_box2d_bodies="1">
+	</PixelSpriteComponent>
+
+	<Entity name="fuser_light_top">
+		<Base file="mods/spell_synthesis/files/entities/fuser/fuser_light.xml">
+			<SpriteComponent
+				special_scale_x="5">
+			</SpriteComponent>
+			<LightComponent
+				offset_x="2.5">
+			</LightComponent>
+		</Base>
+
+		<InheritTransformComponent>
+			<Transform
+				position.x="-2"
+				position.y="-11">
+			</Transform>
+		</InheritTransformComponent>
+	</Entity>
+
+	<Entity name="fuser_light_bottom">
+		<Base file="mods/spell_synthesis/files/entities/fuser/fuser_light.xml">
+			<SpriteComponent
+				special_scale_x="5">
+			</SpriteComponent>
+			<LightComponent
+				offset_x="2.5">
+			</LightComponent>
+		</Base>
+
+		<InheritTransformComponent>
+			<Transform
+				position.x="-2"
+				position.y="11">
+			</Transform>
+		</InheritTransformComponent>
+	</Entity>
+
+	<Entity name="fuser_light_left">
+		<Base file="mods/spell_synthesis/files/entities/fuser/fuser_light.xml">
+			<SpriteComponent
+				special_scale_y="5">
+			</SpriteComponent>
+			<LightComponent
+				offset_y="2.5">
+			</LightComponent>
+		</Base>
+
+		<InheritTransformComponent>
+			<Transform
+				position.x="-11"
+				position.y="-2">
+			</Transform>
+		</InheritTransformComponent>
+	</Entity>
+
+	<Entity name="fuser_light_right">
+		<Base file="mods/spell_synthesis/files/entities/fuser/fuser_light.xml">
+			<SpriteComponent
+				special_scale_y="5">
+			</SpriteComponent>
+			<LightComponent
+				offset_y="2.5">
+			</LightComponent>
+		</Base>
+
+		<InheritTransformComponent>
+			<Transform
+				position.x="11"
+				position.y="-2">
+			</Transform>
+		</InheritTransformComponent>
+	</Entity>
 </Entity>
