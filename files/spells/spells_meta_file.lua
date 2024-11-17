@@ -1,7 +1,7 @@
 ---@diagnostic disable: unused-local, missing-global-doc
 ---@meta
 
----@class action
+---@class (exact) action
 ---@field action fun(recursion: integer, iter: integer): integer?
 ---@field id string
 ---@field name string
@@ -11,17 +11,18 @@
 ---@field recursive boolean?
 ---@field spawn_level string
 ---@field spawn_probability string
----@field spawn_requires_flag string?
+---@field spawn_requires_flag string? locks spawn behind this persistant flag
 ---@field spawn_manual_unlock boolean?
----@field max_uses integer?
+---@field max_uses integer? defaults to -1 (unlimited)
 ---@field custom_xml_file string?
 ---@field ai_never_uses boolean?
 ---@field never_unlimited boolean?
 ---@field is_dangerous_blast boolean?
 ---@field sound_loop_tag string?
----@field mana number?
+---@field mana number? default 10
 ---@field sprite_unidentified string?
----@field deck_index? integer
+---@field deck_index integer?
+---@field related_projectiles string[]? used for add trigger
 
 ---@alias state table<string, any>
 
