@@ -58,36 +58,59 @@ function sprite_generator:color_abgr_merge(r, g, b, a)
 	return bit.bor(bit.band(r, 0xFF), bit.lshift(bit.band(g, 0xFF), 8), bit.lshift(bit.band(b, 0xFF), 16), bit.lshift(bit.band(a, 0xFF), 24))
 end
 
----Blend colors
----@private
----@param color1 integer
----@param color2 integer
----@return integer
+--- Blend colors
+--- @private
+--- @param color1 integer  -- Source color
+--- @param color2 integer  -- Destination color
+--- @return integer  -- Resulting blended color
 function sprite_generator:blend_colors(color1, color2)
 	-- Extract RGBA components
 	local s_r, s_g, s_b, s_a = self:color_abgr_split(color1)
 	local d_r, d_g, d_b, d_a = self:color_abgr_split(color2)
 
-	-- Normalize source alpha and compute inverse alpha once
-	local alpha = s_a / 255
-	local inv_alpha = 1 - alpha
+	-- Normalize alpha values
+	local src_alpha = s_a / 255
+	local dst_alpha = d_a / 255
 
-	-- Blend each component using direct calculations
-	local r = alpha * s_r + inv_alpha * d_r
-	local g = alpha * s_g + inv_alpha * d_g
-	local b = alpha * s_b + inv_alpha * d_b
+	-- Compute final alpha and avoid division by zero
+	local out_alpha = src_alpha + dst_alpha * (1 - src_alpha)
+	if out_alpha == 0 then
+		return self:color_abgr_merge(0, 0, 0, 0)
+	end
 
-	-- Merge the final color with full opacity
-	return self:color_abgr_merge(r, g, b, 255)
+	-- Blend RGB components
+	local r = (s_r * src_alpha + d_r * dst_alpha * (1 - src_alpha)) / out_alpha
+	local g = (s_g * src_alpha + d_g * dst_alpha * (1 - src_alpha)) / out_alpha
+	local b = (s_b * src_alpha + d_b * dst_alpha * (1 - src_alpha)) / out_alpha
+
+	-- Convert blended alpha back to 0-255 range
+	local final_alpha = out_alpha * 255
+
+	-- Merge and return the resulting color
+	return self:color_abgr_merge(r, g, b, final_alpha)
 end
 
 --- Combine two icons
 --- @param icon1 string
---- @param icon2 string|integer
+--- @param level integer
 --- @return string path
-function sprite_generator:merge_icons(icon1, icon2)
-	icon2 = self.levels[icon2] or icon2
+function sprite_generator:add_level_glow(icon1, level)
+	local path1 = icon1:match("^.+/(.+)%.(.+)$")
 
+	local path = string.format("mods/spell_synthesis/vfs/spell_icons/%s_%d.png", path1, level)
+	if not ModImageDoesExist(path) then
+		local image_id = ModImageMakeEditable(path, 16, 16)
+		self:copy_from_icon(image_id, icon1)
+		self:copy_from_icon(image_id, self.levels[level])
+	end
+	return path
+end
+
+--- Combine two icons
+--- @param icon1 string
+--- @param icon2 string
+--- @return string path
+function sprite_generator:add_overlay_to_icon(icon1, icon2)
 	local path1 = icon1:match("^.+/(.+)%.(.+)$")
 	local path2 = icon2:match("^.+/(.+)%.(.+)$")
 
