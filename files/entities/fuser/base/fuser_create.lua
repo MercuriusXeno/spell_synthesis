@@ -7,7 +7,8 @@ if not DoesWorldExistAt(pos_x, pos_y - search_dist_y, pos_x, pos_y) then return 
 
 local ray_hit, ray_x, ray_y = RaytracePlatforms(pos_x, pos_y, pos_x, pos_y + search_dist_y)
 if ray_hit then
-	local entity_y = ray_y - 23
+	local scene_x, scene_y = ray_x - 35, ray_y - 53
+	local entity_y = scene_y + 19
 	EntitySetTransform(entity, ray_x, entity_y)
 	if true then
 		local workshop_entity = EntityLoad("mods/spell_synthesis/files/entities/fuser/base/fuser_workshop.xml", ray_x, entity_y)
@@ -16,8 +17,8 @@ if ray_hit then
 	LoadPixelScene(
 		"mods/spell_synthesis/files/entities/fuser/pixelscene/fuser.png",
 		"mods/spell_synthesis/files/entities/fuser/pixelscene/fuser_visual.png",
-		ray_x - 35,
-		entity_y - 19
+		scene_x,
+		scene_y
 	)
 	EntityRemoveComponent(entity, GetUpdatedComponentID())
 else
