@@ -1,0 +1,15 @@
+<Sprite
+	filename="mods/spell_synthesis/files/entities/fuser/gfx/anvil_core.png"
+	default_animation="default">
+	<RectAnimation
+		name="default"
+		pos_x="0"
+		pos_y="0"
+		frame_count="7"
+		frame_width="11"
+		frame_height="11"
+		frame_wait="0.03"
+		frames_per_row="7"
+		loop="1">
+	</RectAnimation>
+</Sprite>
