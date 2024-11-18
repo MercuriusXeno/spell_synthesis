@@ -1,4 +1,4 @@
-<Entity>
+<Entity tags="torch">
 	<SpriteComponent
 		image_file="mods/spell_synthesis/files/entities/fuser/gfx/anvil_light.png"
 		offset_x="0"

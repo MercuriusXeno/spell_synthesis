@@ -4,18 +4,31 @@ local fuser = dofile_once("mods/spell_synthesis/files/scripts/spell_fuser/spell_
 local entity = GetUpdatedEntityID()
 local x, y = EntityGetTransform(entity)
 
+--- Checks if entity still has charges left
+--- @return boolean
+local function has_charge()
+	local children = EntityGetAllChildren(entity)
+	if children then
+		for i = 1, #children do
+			local child = children[i]
+			if EntityHasTag(child, "torch") then
+				EntityKill(child)
+				return true
+			end
+		end
+	end
+	return false
+end
+
 if fuser.fusing then
 	fuser:fuse_spells(x + 0.5, y + 9)
+
 	-- If fusing was finished
 	if not fuser.fusing then
-		local children = EntityGetAllChildren(entity)
-		if not children then
-			local component = GetUpdatedComponentID()
-			EntitySetComponentIsEnabled(entity, component, false)
-			EntityLoad("data/entities/projectiles/thunderball.xml", x - 1, y - 2)
-		else
-			EntityKill(children[1])
-		end
+		if has_charge() then return end
+		local component = GetUpdatedComponentID()
+		EntitySetComponentIsEnabled(entity, component, false)
+		EntityLoad("data/entities/projectiles/thunderball.xml", x - 1, y - 2)
 	end
 elseif GameGetFrameNum() % 10 == 0 then
 	local recipe, matched_entities = fuser:scan_for_recipe(x, y)
