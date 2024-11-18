@@ -1,3 +1,5 @@
+dofile_once("mods/spell_synthesis/files/spells/recipes/recipes.lua")
+
 --- @class ss_fuser_cache
 local cache = {
 	entity_has_recipe = setmetatable({}, { __mode = "k" }),
@@ -10,7 +12,7 @@ local cache = {
 --- @field radius number radius from entity to scan
 --- @field fusing boolean if we are fusing the spells
 local fuser = {
-	recipes = dofile_once("mods/spell_synthesis/files/spells/recipes.lua"),
+	recipes = SSRecipes,
 	cache = cache,
 	radius = 30,
 	offset_y = 30,
