@@ -42,7 +42,6 @@ function fuser:is_spells_still_present()
 
 	for i = 1, #self.current_fusion.entities do
 		local entity = self.current_fusion.entities[i]
-		-- if not EntityGetIsAlive(entity) then self:fuse_cancel() end
 		local item_action_component = EntityGetFirstComponent(entity, "ItemActionComponent")
 		if not item_action_component then
 			self:fuse_cancel()
@@ -58,12 +57,12 @@ end
 --- @private
 --- @param target_x number
 function fuser:fuse_spells_animation_side(target_x)
+	local step = self.current_fusion.step / self.steps.side_step
 	for i = 1, #self.current_fusion.entities do
 		local entity = self.current_fusion.entities[i]
 		local x, y = EntityGetTransform(entity)
 
 		-- Linear interpolation for smooth movement
-		local step = self.current_fusion.step / self.steps.side_step
 		local new_x = x + step * (target_x - x)
 		EntityApplyTransform(entity, new_x, y)
 	end
@@ -73,12 +72,12 @@ end
 --- @private
 --- @param target_y number
 function fuser:fuse_spells_animation_up(target_y)
+	local step = self.current_fusion.step / self.steps.up_step
 	for i = 1, #self.current_fusion.entities do
 		local entity = self.current_fusion.entities[i]
 		local x, y = EntityGetTransform(entity)
 
 		-- Linear interpolation for smooth movement
-		local step = self.current_fusion.step / self.steps.up_step
 		local new_y = y + step * (target_y - y)
 		EntityApplyTransform(entity, x, new_y)
 	end
