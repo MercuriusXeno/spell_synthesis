@@ -38,7 +38,6 @@ do -- helpers
 	--- @param setting_name setting_id
 	--- @param value setting_value
 	function U.set_setting(setting_name, value)
-		ModSettingSet(mod_prfx .. setting_name, value)
 		ModSettingSetNextValue(mod_prfx .. setting_name, value, false)
 	end
 
@@ -139,8 +138,9 @@ do -- gui helpers
 	end
 
 	--- @param gui gui
-	--- @param setting_name setting_id
-	function G.toggle_checkbox_boolean(gui, setting_name)
+	--- @param setting mod_setting_boolean
+	function G.toggle_checkbox_boolean(gui, setting)
+		local setting_name = setting.id or ""
 		local value = U.get_setting_next(setting_name)
 		local text = GameTextGetTranslatedOrNot(value and "$option_on" or "$option_off")
 		local _, _, _, prev_x, y, prev_w = GuiGetPreviousWidgetInfo(gui)
@@ -151,7 +151,7 @@ do -- gui helpers
 		G.button_options(gui)
 		GuiImageNinePiece(gui, id(), x, y, offset_w + 12, 10, 10, U.empty, U.empty) -- hover box
 		local _, _, hovered = GuiGetPreviousWidgetInfo(gui)
-		G.tooltip(gui, setting_name)
+		G.tooltip(gui, setting_name, setting.scope)
 
 		GuiZSetForNextWidget(gui, 1)
 		GuiImageNinePiece(gui, id(), x + offset_w + 3, y + 2, 6, 6) -- check box
@@ -241,7 +241,7 @@ do -- Settings GUI
 		G.tooltip(gui, setting.id)
 		GuiLayoutBeginHorizontal(gui, U.offset, 0, true, 0, 0)
 		GuiText(gui, 7, 0, "")
-		G.toggle_checkbox_boolean(gui, setting.id)
+		G.toggle_checkbox_boolean(gui, setting)
 		GuiLayoutEnd(gui)
 	end
 
