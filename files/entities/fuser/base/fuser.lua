@@ -21,10 +21,9 @@ local function has_charge()
 end
 
 local function end_fusion()
-	-- GamePlaySound("mods/spell_synthesis/files/audio/bank/spell_synthesis.bank", "fuser/created", x, y)
+	GamePlaySound("mods/spell_synthesis/files/audio/bank/spell_synthesis.bank", "fuser/create", x, y)
 	if has_charge() then return end
-	local component = GetUpdatedComponentID()
-	EntitySetComponentIsEnabled(entity, component, false)
+	EntitySetComponentsWithTagEnabled(entity, "activate", false)
 	EntityLoad("data/entities/projectiles/thunderball.xml", x - 1, y - 2)
 end
 
