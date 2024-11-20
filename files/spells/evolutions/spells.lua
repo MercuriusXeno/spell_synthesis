@@ -4,14 +4,14 @@ local sprite_generator = dofile_once("mods/spell_synthesis/files/scripts/sprite_
 local spells = {
 	{
 		id = "SS_LIGHT_BULLET_2",
-		name = "$action_light_bullet",
-		description = "$actiondesc_light_bullet",
+		name = "$ss_action_light_bullet_2",
+		description = "$ss_actiondesc_light_bullet_2",
 		sprite = sprite_generator:add_level_glow("data/ui_gfx/gun_actions/light_bullet.png", 2),
 		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/light_bullet/SS_LIGHT_BULLET_2.xml" },
 		type = ACTION_TYPE_PROJECTILE,
 		spawn_level = "10",
 		spawn_probability = "0",
-		mana = 7.5,
+		mana = 8,
 		action = function()
 			add_projectile("mods/spell_synthesis/files/spells/evolutions/light_bullet/SS_LIGHT_BULLET_2.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 4
@@ -22,14 +22,14 @@ local spells = {
 	},
 	{
 		id = "SS_LIGHT_BULLET_3",
-		name = "$action_light_bullet",
-		description = "$actiondesc_light_bullet",
+		name = "$ss_action_light_bullet_2",
+		description = "$ss_actiondesc_light_bullet_3",
 		sprite = sprite_generator:add_level_glow("data/ui_gfx/gun_actions/light_bullet.png", 3),
 		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/light_bullet/SS_LIGHT_BULLET_3.xml" },
 		type = ACTION_TYPE_PROJECTILE,
 		spawn_level = "10",
 		spawn_probability = "0",
-		mana = 11,
+		mana = 15,
 		action = function()
 			add_projectile("mods/spell_synthesis/files/spells/evolutions/light_bullet/SS_LIGHT_BULLET_3.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 6
@@ -40,25 +40,25 @@ local spells = {
 	},
 	{
 		id = "SS_DIGGER_2",
-		name = "$action_digger",
-		description = "$actiondesc_digger",
+		name = "$ss_action_digger_2",
+		description = "$ss_actiondesc_digger_2",
 		sprite = "mods/spell_synthesis/files/spells/evolutions/digger/digger_2.png",
 		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/digger/ss_digger_2.xml" },
 		type = ACTION_TYPE_PROJECTILE,
 		spawn_level = "10",
 		spawn_probability = "0",
-		mana = 1,
+		mana = 0,
 		sound_loop_tag = "sound_digger",
 		action = function()
 			add_projectile("mods/spell_synthesis/files/spells/evolutions/digger/ss_digger_2.xml")
-			c.fire_rate_wait = c.fire_rate_wait + 0.5
-			current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 12
+			c.fire_rate_wait = c.fire_rate_wait + 1
+			current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10
 		end,
 	},
 	{
 		id = "SS_DIGGER_3",
-		name = "$action_digger",
-		description = "$actiondesc_digger",
+		name = "$ss_action_digger_3",
+		description = "$ss_actiondesc_digger_3",
 		sprite = "mods/spell_synthesis/files/spells/evolutions/digger/digger_3.png",
 		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/digger/ss_digger_3.xml" },
 		type = ACTION_TYPE_PROJECTILE,
@@ -68,7 +68,7 @@ local spells = {
 		sound_loop_tag = "sound_digger",
 		action = function()
 			add_projectile("mods/spell_synthesis/files/spells/evolutions/digger/ss_digger_3.xml")
-			current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 15
+			current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10
 		end,
 	},
 }
