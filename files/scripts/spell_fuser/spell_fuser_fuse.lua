@@ -105,6 +105,12 @@ function fuser:fuse_spells(target_x, target_y)
 	end
 end
 
+--- Returns current step of fusion
+--- @return number
+function fuser:get_current_step()
+	return self.current_fusion.step
+end
+
 --- Start fusing
 --- @param result string
 --- @param entities entity_id[]

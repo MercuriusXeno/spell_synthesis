@@ -20,20 +20,27 @@ local function has_charge()
 	return false
 end
 
-if fuser.fusing then
-	fuser:fuse_spells(x + 0.5, y + 9)
+local function end_fusion()
+	-- GamePlaySound("mods/spell_synthesis/files/audio/bank/spell_synthesis.bank", "fuser/created", x, y)
+	if has_charge() then return end
+	local component = GetUpdatedComponentID()
+	EntitySetComponentIsEnabled(entity, component, false)
+	EntityLoad("data/entities/projectiles/thunderball.xml", x - 1, y - 2)
+end
 
+local energy = 0
+
+if fuser.fusing then
+	energy = fuser:get_current_step() / 300
+	fuser:fuse_spells(x + 0.5, y + 9)
 	-- If fusing was finished
-	if not fuser.fusing then
-		if has_charge() then return end
-		local component = GetUpdatedComponentID()
-		EntitySetComponentIsEnabled(entity, component, false)
-		EntityLoad("data/entities/projectiles/thunderball.xml", x - 1, y - 2)
-	end
+	if not fuser.fusing then end_fusion() end
 elseif GameGetFrameNum() % 10 == 0 then
 	local recipe, matched_entities = fuser:scan_for_recipe(x, y)
 	if recipe then fuser:start_fusing(recipe.result, matched_entities) end
 end
+
+GameEntityPlaySoundLoop(entity, "activate", energy, 0)
 
 --- Gets called on init (lol)
 --- @param entity_id entity_id

@@ -119,4 +119,10 @@
 			</Transform>
 		</InheritTransformComponent>
 	</Entity>
+
+	<AudioLoopComponent
+		_tags="activate"
+		file="mods/spell_synthesis/files/audio/bank/spell_synthesis.bank"
+		event_name="fuser/loop">
+	</AudioLoopComponent>
 </Entity>
