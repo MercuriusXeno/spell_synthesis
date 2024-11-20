@@ -1,3 +1,4 @@
+dofile_once("mods/spell_synthesis/files/translation/append.lua")
 dofile_once("mods/spell_synthesis/files/biomes/append.lua")
 dofile_once("mods/spell_synthesis/files/spells/append.lua")
 
