@@ -24,17 +24,17 @@
 		lifetime_randomness="7"
 		ragdoll_force_multiplier="0.005"
 		hit_particle_force_multiplier="0.1"
-		muzzle_flash_file="data/entities/particles/muzzle_flashes/muzzle_flash_small_pink.xml"
-		shoot_light_flash_r="255"
-		shoot_light_flash_g="160"
-		shoot_light_flash_b="255"
+		muzzle_flash_file="mods/spell_synthesis/files/spells/gfx/muzzle/muzzle_flash_green_small.xml"
+		shoot_light_flash_r="128"
+		shoot_light_flash_g="250"
+		shoot_light_flash_b="150"
 		shoot_light_flash_radius="64"
 		knockback_force="0">
 		<config_explosion
 			damage="0.0"
 			camera_shake="0.5"
 			explosion_radius="4.5"
-			explosion_sprite="data/particles/explosion_008_pink.xml"
+			explosion_sprite="data/particles/explosion_008_plasma_green.xml"
 			explosion_sprite_lifetime="0"
 			create_cell_probability="0"
 			hole_destroy_liquid="0"
@@ -60,7 +60,7 @@
 	</ProjectileComponent>
 
 	<SpriteComponent
-		image_file="data/projectiles_gfx/spark.xml"
+		image_file="mods/spell_synthesis/files/spells/evolutions/light_bullet/spark_green.xml"
 		next_rect_animation="default"
 		rect_animation="default"
 		additive="1">
@@ -68,7 +68,7 @@
 
 	<!-- dense emitter -->
 	<ParticleEmitterComponent
-		emitted_material_name="plasma_fading_pink"
+		emitted_material_name="plasma_fading_green"
 		offset.x="0"
 		offset.y="0"
 		x_pos_offset_min="0"
@@ -100,7 +100,7 @@
 
 	<!-- sparse emitter -->
 	<ParticleEmitterComponent
-		emitted_material_name="plasma_fading_pink"
+		emitted_material_name="plasma_fading_green"
 		offset.x="0"
 		offset.y="0"
 		x_pos_offset_min="0"
@@ -132,7 +132,7 @@
 
 	<!-- very sparse emitter -->
 	<ParticleEmitterComponent
-		emitted_material_name="plasma_fading_pink"
+		emitted_material_name="plasma_fading_green"
 		offset.x="0"
 		offset.y="0"
 		x_pos_offset_min="0"
@@ -164,10 +164,10 @@
 
 	<LightComponent
 		_enabled="1"
-		r="255"
-		g="40"
-		b="255"
-		radius="30">
+		r="120"
+		g="255"
+		b="150"
+		radius="40">
 	</LightComponent>
 
 	<AudioComponent
