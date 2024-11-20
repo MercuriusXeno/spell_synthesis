@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{ea952de7-ff71-4e26-974d-f1f22383e8de}">
 		<property name="assetPath">
-			<value>fuser/alchemy-short-fx_04-47004.mp3</value>
+			<value>alchemy-short-fx_04-47004.mp3</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>24</value>

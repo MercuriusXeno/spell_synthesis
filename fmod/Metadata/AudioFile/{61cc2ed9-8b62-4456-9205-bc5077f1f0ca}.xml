@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{41550f22-0fc4-4a5f-9bb7-e4b583638854}">
+	<object class="AudioFile" id="{61cc2ed9-8b62-4456-9205-bc5077f1f0ca}">
 		<property name="assetPath">
-			<value>alchemy-short-fx_02-46765.mp3</value>
+			<value>fuser/fusion-radiogun-213839(1).mp3</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>24</value>
+			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<property name="length">
-			<value>3.8159999999999998</value>
+			<value>2.0897959183673471</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{eb2a4d4a-1287-481b-8086-c8771a725107}</destination>
