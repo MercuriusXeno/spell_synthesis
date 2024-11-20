@@ -24,4 +24,8 @@ SSRecipes = {
 		spells = { "SS_DIGGER_2", "SS_DIGGER_2" },
 		result = "SS_DIGGER_3",
 	},
+	{
+		spells = { "SS_FRIENDLY_PROJECTILE", "SS_FRIENDLY_EXPLOSION" },
+		result = "SS_FRIENDLY_SAFE",
+	},
 }
