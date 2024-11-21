@@ -48,7 +48,12 @@ function fuser:finish_fusing(target_x, target_y)
 		local entity = self.current_fusion.entities[i]
 		EntityKill(entity)
 	end
-	CreateItemActionEntity(self.current_fusion.result, target_x, target_y)
+	local spell_to_spawn = self.current_fusion.result
+	CreateItemActionEntity(spell_to_spawn, target_x, target_y)
+
+	local flag = string.format("action_%s", spell_to_spawn:lower())
+	AddFlagPersistent(flag)
+
 	self.current_fusion = nil
 	self.fusing = false
 end
