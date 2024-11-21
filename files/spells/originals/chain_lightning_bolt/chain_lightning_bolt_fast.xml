@@ -1,0 +1,10 @@
+<Entity name="$projectile_default" tags="projectile_player">
+	<Base
+		file="mods/spell_synthesis/files/spells/originals/chain_lightning_bolt/chain_lightning_bolt.xml"
+		include_children="1">
+		<LuaComponent
+			script_source_file="mods/spell_synthesis/files/spells/originals/chain_lightning_bolt/chain_lightning_bolt.lua"
+			execute_every_n_frame="1">
+		</LuaComponent>
+	</Base>
+</Entity>

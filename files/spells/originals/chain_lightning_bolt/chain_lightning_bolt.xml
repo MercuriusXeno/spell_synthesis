@@ -1,0 +1,65 @@
+<Entity name="$projectile_default" tags="projectile_player">
+	<Base file="data/entities/base_projectile.xml">
+		<VelocityComponent
+			gravity_y="0">
+		</VelocityComponent>
+	</Base>
+
+	<ProjectileComponent
+		lob_min="0.8"
+		lob_max="1.0"
+		speed_min="40"
+		speed_max="40"
+		on_death_gfx_leave_sprite="0"
+		shoot_light_flash_radius="15"
+		shoot_light_flash_r="250"
+		shoot_light_flash_g="80"
+		shoot_light_flash_b="255"
+		damage="1"
+		lifetime="44"
+		penetrate_entities="1">
+		<damage_by_type
+			electricity="1">
+		</damage_by_type>
+	</ProjectileComponent>
+
+	<LightningComponent
+		is_projectile="1"
+		arc_lifetime="600">
+		<config_explosion
+			explosion_radius="30"
+			explosion_sprite="data/particles/explosion_032_electric.xml"
+			load_this_entity="data/entities/particles/particle_explosion/main_blue_tiny.xml"
+			create_cell_probability="1"
+			explosion_sprite_emissive="1"
+			explosion_sprite_additive="1"
+			spark_material="spark_electric"
+			hole_image="data/temp/explosion_hole.png"
+			physics_explosion_power.max="2.5"
+			sparks_count_min="1"
+			sparks_count_max="10"
+			stains_radius="8"
+			audio_enabled="0">
+		</config_explosion>
+	</LightningComponent>
+
+	<LuaComponent
+		script_source_file="mods/spell_synthesis/files/spells/originals/chain_lightning_bolt/chain_lightning_bolt.lua"
+		execute_every_n_frame="10">
+	</LuaComponent>
+
+	<VariableStorageComponent
+		name="prev_entity_id"
+		value_int="0">
+	</VariableStorageComponent>
+
+	<VariableStorageComponent
+		name="prev_prev_entity_id"
+		value_int="0">
+	</VariableStorageComponent>
+
+	<VariableStorageComponent
+		name="projectile_file"
+		value_string="mods/spell_synthesis/files/spells/originals/chain_lightning_bolt/chain_lightning_bolt.xml">
+	</VariableStorageComponent>
+</Entity>
