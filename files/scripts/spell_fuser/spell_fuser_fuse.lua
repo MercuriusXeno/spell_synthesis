@@ -1,20 +1,6 @@
---- @class ss_fuser_animation_steps
-local fuse_steps_frames = {
-	up = 180,
-	side = 180,
-}
-
--- Precompute steps
-fuse_steps_frames.side = fuse_steps_frames.up + fuse_steps_frames.side
-fuse_steps_frames.up_step = fuse_steps_frames.up * 8
-fuse_steps_frames.side_step = fuse_steps_frames.side * 16
-
 --- @class ss_fuser
---- @field private steps ss_fuser_animation_steps
 --- @field private current_fusion? ss_current_fusion
-local fuser = {
-	steps = fuse_steps_frames,
-}
+local fuser = {}
 
 --- Cancels fusion
 function fuser:fuse_cancel()
@@ -53,34 +39,18 @@ function fuser:is_spells_still_present()
 	return true
 end
 
---- Does animation for going towards fuser
+--- Consumes spells and creates a result
 --- @private
 --- @param target_x number
-function fuser:fuse_spells_animation_side(target_x)
-	local step = self.current_fusion.step / self.steps.side_step
-	for i = 1, #self.current_fusion.entities do
-		local entity = self.current_fusion.entities[i]
-		local x, y = EntityGetTransform(entity)
-
-		-- Linear interpolation for smooth movement
-		local new_x = x + step * (target_x - x)
-		EntityApplyTransform(entity, new_x, y)
-	end
-end
-
---- Does animation for floating spells up
---- @private
 --- @param target_y number
-function fuser:fuse_spells_animation_up(target_y)
-	local step = self.current_fusion.step / self.steps.up_step
+function fuser:finish_fusing(target_x, target_y)
 	for i = 1, #self.current_fusion.entities do
 		local entity = self.current_fusion.entities[i]
-		local x, y = EntityGetTransform(entity)
-
-		-- Linear interpolation for smooth movement
-		local new_y = y + step * (target_y - y)
-		EntityApplyTransform(entity, x, new_y)
+		EntityKill(entity)
 	end
+	CreateItemActionEntity(self.current_fusion.result, target_x, target_y)
+	self.current_fusion = nil
+	self.fusing = false
 end
 
 --- Fuse spells
@@ -90,18 +60,10 @@ function fuser:fuse_spells(target_x, target_y)
 	if not self:is_spells_still_present() then return end
 
 	self.current_fusion.step = self.current_fusion.step + 1
-	if self.current_fusion.step < self.steps.up then
-		self:fuse_spells_animation_up(target_y)
-	elseif self.current_fusion.step < self.steps.side then
-		self:fuse_spells_animation_side(target_x)
+	if self.current_fusion.animating then
+		self:fuse_spells_animate(target_x, target_y)
 	else
-		for i = 1, #self.current_fusion.entities do
-			local entity = self.current_fusion.entities[i]
-			EntityKill(entity)
-		end
-		CreateItemActionEntity(self.current_fusion.result, target_x, target_y)
-		self.current_fusion = nil
-		self.fusing = false
+		self:finish_fusing(target_x, target_y)
 	end
 end
 
@@ -119,6 +81,7 @@ function fuser:start_fusing(result, entities)
 		result = result,
 		entities = entities,
 		step = 0,
+		animating = true,
 	}
 	for i = 1, #entities do
 		local entity = entities[i]

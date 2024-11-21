@@ -23,6 +23,7 @@ local modules = {
 	"mods/spell_synthesis/files/scripts/spell_fuser/spell_fuser_fuse.lua",
 	"mods/spell_synthesis/files/scripts/spell_fuser/spell_fuser_scanner.lua",
 	"mods/spell_synthesis/files/scripts/spell_fuser/spell_fuser_particles.lua",
+	"mods/spell_synthesis/files/scripts/spell_fuser/spell_fuser_fuse_animation.lua",
 }
 
 for _, module_name in ipairs(modules) do
