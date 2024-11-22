@@ -10,9 +10,10 @@ for i = 1, #spell_list do
 end
 
 local compat_list = {
-	copis_things = "mods/spell_synthesis/files/spells/compatibility/copis_things/spells.lua",
+	"copis_things",
 }
 
-for mod, append_file in pairs(compat_list) do
-	if ModIsEnabled(mod) then ModLuaFileAppend("data/scripts/gun/gun_actions.lua", append_file) end
+for i=1, #compat_list do
+	local mod = compat_list[i]
+	if ModIsEnabled(mod) then ModLuaFileAppend("data/scripts/gun/gun_actions.lua", table.concat{"mods/spell_synthesis/files/spells/compatibility/", mod, "/spells.lua"}) end
 end
