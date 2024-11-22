@@ -9,5 +9,5 @@ ModRegisterMusicBank("mods/spell_synthesis/files/audio/bank/spell_synthesis.bank
 function OnPlayerSpawned()
 	if GameHasFlagRun("spell_synthesis_init") then return end
 	GameAddFlagRun("spell_synthesis_init")
-	EntityLoad("mods/spell_synthesis/files/entities/fuser/fuser_world.xml", 180, -100)
+	-- EntityLoad("mods/spell_synthesis/files/entities/fuser/fuser_world.xml", 180, -100)
 end

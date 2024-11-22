@@ -154,19 +154,21 @@ do -- gui helpers
 		G.tooltip(gui, setting_name, setting.scope)
 
 		GuiZSetForNextWidget(gui, 1)
-		GuiImageNinePiece(gui, id(), x + offset_w + 3, y + 2, 6, 6) -- check box
+		GuiImageNinePiece(gui, id(), x + 2, y + 2, 6, 6) -- check box
 
-		G.yellow_if_hovered(gui, hovered)
-		GuiText(gui, 0, 0, text)
-
+		GuiText(gui, 4, 0, "")
 		if value then
 			GuiColorSetForNextWidget(gui, 0, 0.8, 0, 1)
-			GuiText(gui, 5, 0, "V")
+			GuiText(gui, 0, 0, "V")
+			GuiText(gui, 0, 0, " ")
+			G.yellow_if_hovered(gui, hovered)
 		else
 			GuiColorSetForNextWidget(gui, 0.8, 0, 0, 1)
-			GuiText(gui, 5, 0, "X")
+			GuiText(gui, 0, 0, "X")
+			GuiText(gui, 0, 0, " ")
+			G.yellow_if_hovered(gui, hovered)
 		end
-
+		GuiText(gui, 0, 0, text)
 		if hovered then G.on_clicks(setting_name, not value, D[setting_name]) end
 	end
 
@@ -181,7 +183,7 @@ do -- gui helpers
 		local value = tonumber(U.get_setting_next(setting.id)) or setting.value_default
 		local multiplier = setting.value_display_multiplier or 1
 		local value_new =
-			GuiSlider(gui, id(), U.offset - w + 6, 0, "", value, setting.value_min, setting.value_max, setting.value_default, multiplier, " ", 64)
+			GuiSlider(gui, id(), U.offset - w + 6, 0.5, "", value, setting.value_min, setting.value_max, setting.value_default, multiplier, " ", 64)
 		GuiColorSetForNextWidget(gui, 0.81, 0.81, 0.81, 1)
 		local format = setting.format or ""
 		GuiText(gui, 3, 0, tostring(math.floor(value * multiplier)) .. format)
@@ -237,7 +239,7 @@ do -- Settings GUI
 
 	function S.mod_setting_better_boolean(_, gui, _, _, setting)
 		GuiOptionsAddForNextWidget(gui, GUI_OPTION.Layout_NextSameLine)
-		GuiText(gui, mod_setting_group_x_offset, 0, string.format("%s:", setting.ui_name))
+		GuiText(gui, mod_setting_group_x_offset, 0, setting.ui_name)
 		G.tooltip(gui, setting.id)
 		GuiLayoutBeginHorizontal(gui, U.offset, 0, true, 0, 0)
 		GuiText(gui, 7, 0, "")
@@ -265,6 +267,8 @@ local translations = {
 		fuser_workshop_d = "Enable wand tinkering area near spell fuser",
 		fuser_consume_charge = "Chance to consume charge",
 		fuser_consume_charge_d = "Chance for fuser to consume charge on fusion",
+		fuser_spawn_on_spawn = "Fuser at spawn",
+		fuser_spawn_on_spawn_d = "Spawn fuser at the spawn",
 	},
 }
 
@@ -288,6 +292,7 @@ setmetatable(T, mt)
 D = {
 	fuser_workshop = true,
 	fuser_consume_charge = 100,
+	fuser_spawn_on_spawn = false,
 }
 
 local function build_settings()
@@ -309,6 +314,13 @@ local function build_settings()
 			format = "%",
 			ui_fn = S.mod_setting_number_integer,
 			scope = MOD_SETTING_SCOPE_RUNTIME,
+		},
+		{
+			id = "fuser_spawn_on_spawn",
+			ui_name = T.fuser_spawn_on_spawn,
+			value_default = D.fuser_spawn_on_spawn,
+			ui_fn = S.mod_setting_better_boolean,
+			scope = MOD_SETTING_SCOPE_NEW_GAME,
 		},
 	}
 	U.offset = U.calculate_elements_offset(settings)
