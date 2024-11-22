@@ -12,7 +12,8 @@ local function has_charge()
 		for i = 1, #children do
 			local child = children[i]
 			if EntityHasTag(child, "torch") then
-				EntityKill(child)
+				SetRandomSeed(x + GameGetFrameNum(), y)
+				if Random(0, 99) < ModSettingGet("spell_synthesis.fuser_consume_charge") then EntityKill(child) end
 				return true
 			end
 		end

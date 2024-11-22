@@ -263,6 +263,8 @@ local translations = {
 	["English"] = {
 		fuser_workshop = "Enable wand tinkering",
 		fuser_workshop_d = "Enable wand tinkering area near spell fuser",
+		fuser_consume_charge = "Chance to consume charge",
+		fuser_consume_charge_d = "Chance for fuser to consume charge on fusion",
 	},
 }
 
@@ -285,6 +287,7 @@ setmetatable(T, mt)
 
 D = {
 	fuser_workshop = true,
+	fuser_consume_charge = 100,
 }
 
 local function build_settings()
@@ -296,6 +299,16 @@ local function build_settings()
 			value_default = D.fuser_workshop,
 			ui_fn = S.mod_setting_better_boolean,
 			scope = MOD_SETTING_SCOPE_NEW_GAME,
+		},
+		{
+			id = "fuser_consume_charge",
+			ui_name = T.fuser_consume_charge,
+			value_default = D.fuser_consume_charge,
+			value_max = 100,
+			value_min = 0,
+			format = "%",
+			ui_fn = S.mod_setting_number_integer,
+			scope = MOD_SETTING_SCOPE_RUNTIME,
 		},
 	}
 	U.offset = U.calculate_elements_offset(settings)
