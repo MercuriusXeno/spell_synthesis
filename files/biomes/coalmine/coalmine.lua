@@ -7,16 +7,16 @@ end
 
 g_pixel_scene_01[#g_pixel_scene_01 + 1] = {
 	prob = 0.1,
-	material_file = "mods/spell_synthesis/files/biomes/coalmine/vertical.png",
-	visual_file = "mods/spell_synthesis/files/biomes/coalmine/vertical_visual.png",
-	background_file = "mods/spell_synthesis/files/biomes/coalmine/vertical_bg.png",
+	material_file = "mods/spell_synthesis/files/biomes/coalmine/fuser/vertical.png",
+	visual_file = "mods/spell_synthesis/files/biomes/coalmine/fuser/vertical_visual.png",
+	background_file = "mods/spell_synthesis/files/biomes/coalmine/fuser/vertical_bg.png",
 	is_unique = 0,
 }
 
 g_pixel_scene_02[#g_pixel_scene_02 + 1] = {
 	prob = 0.05,
-	material_file = "mods/spell_synthesis/files/biomes/coalmine/horizontal.png",
-	visual_file = "mods/spell_synthesis/files/biomes/coalmine/horizontal_visual.png",
-	background_file = "mods/spell_synthesis/files/biomes/coalmine/horizontal_bg.png",
+	material_file = "mods/spell_synthesis/files/biomes/coalmine/fuser/horizontal.png",
+	visual_file = "mods/spell_synthesis/files/biomes/coalmine/fuser/horizontal_visual.png",
+	background_file = "mods/spell_synthesis/files/biomes/coalmine/fuser/horizontal_bg.png",
 	is_unique = 0,
 }
