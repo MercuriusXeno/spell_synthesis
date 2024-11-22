@@ -1,0 +1,45 @@
+<Entity>
+	<MaterialAreaCheckerComponent
+		look_for_failure="0"
+		count_min="30"
+		material="meat"
+		material2="meat_slime"
+		area_aabb.min_x="-11"
+		area_aabb.max_x="11"
+		area_aabb.min_y="-3"
+		area_aabb.max_y="15"
+		always_check_fullness="1">
+	</MaterialAreaCheckerComponent>
+
+	<MaterialAreaCheckerComponent
+		look_for_failure="0"
+		count_min="30"
+		material="meat_slime_green"
+		material2="meat_cursed"
+		area_aabb.min_x="-11"
+		area_aabb.max_x="11"
+		area_aabb.min_y="-3"
+		area_aabb.max_y="15"
+		always_check_fullness="1">
+	</MaterialAreaCheckerComponent>
+
+	<MaterialAreaCheckerComponent
+		material="steel_static"
+		area_aabb.min_x="-20"
+		area_aabb.max_x="-13"
+		area_aabb.min_y="-3"
+		area_aabb.max_y="4">
+	</MaterialAreaCheckerComponent>
+	<MaterialAreaCheckerComponent
+		material="steel_static"
+		area_aabb.min_x="13"
+		area_aabb.max_x="20"
+		area_aabb.min_y="-3"
+		area_aabb.max_y="4">
+	</MaterialAreaCheckerComponent>
+
+	<LuaComponent
+		script_material_area_checker_success="mods/spell_synthesis/files/entities/saw_puzzle/puzzle_material_checker.lua"
+		script_material_area_checker_failed="mods/spell_synthesis/files/entities/saw_puzzle/puzzle_material_checker.lua">
+	</LuaComponent>
+</Entity>

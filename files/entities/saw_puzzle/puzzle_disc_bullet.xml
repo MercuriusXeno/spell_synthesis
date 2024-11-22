@@ -1,0 +1,46 @@
+<Entity name="saw_puzzle_saw" tags="disc_bullet_big">
+	<ProjectileComponent
+		on_collision_die="0"
+		lifetime="-1"
+		damage="0"
+		ragdoll_fx_on_collision="BLOOD_EXPLOSION"
+		knockback_force="1.3"
+		physics_impulse_coeff="10000">
+		<damage_by_type
+			slice="2.5">
+		</damage_by_type>
+	</ProjectileComponent>
+
+	<SpriteComponent
+		image_file="mods/spell_synthesis/files/entities/saw_puzzle/disc_sprite.xml"
+		z_index="-1">
+	</SpriteComponent>
+
+	<AudioLoopComponent
+		_enabled="0"
+		_tags="activate"
+		file="data/audio/Desktop/projectiles.bank"
+		event_name="player_projectiles/bullet_disc_big/loop"
+		play_on_component_enable="1">
+	</AudioLoopComponent>
+
+	<MusicEnergyAffectorComponent
+		_tags="activate"
+		_enabled="0"
+		energy_target="1">
+	</MusicEnergyAffectorComponent>
+
+	<AreaDamageComponent
+		_tags="activate"
+		aabb_min.x="-9"
+		aabb_min.y="-9"
+		aabb_max.x="9"
+		aabb_max.y="9"
+		damage_per_frame="0.6"
+		update_every_n_frame="1"
+		entities_with_tag="hittable"
+		damage_type="DAMAGE_SLICE"
+		death_cause="bzzt!"
+		_enabled="0">
+	</AreaDamageComponent>
+</Entity>
