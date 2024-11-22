@@ -1,0 +1,7 @@
+coalmine/coalmine_alt - g_pixel_scene_01 130/260, g_pixel_scene_02 260/130
+excavationsite - g_pixel_scene_04 400/200
+snowcave - g_pixel_scene_01 260/520, g_pixel_scene_02 520/260
+snowcastle - g_pixel_scene_01 130/260, g_pixel_scene_02 260/130
+rainforest - g_pixel_scene_01 200/400, g_pixel_scene_02 400/200
+vault - g_pixel_scene_01 200/400, g_pixel_scene_02 400/200
+crypt - g_pixel_scene_01 440/220, g_pixel_scene_02 220/440
