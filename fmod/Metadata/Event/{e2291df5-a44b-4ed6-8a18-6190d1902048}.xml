@@ -5,7 +5,7 @@
 			<value>solved</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{bfb982e0-6542-45f4-8bbc-6be257869cdb}</destination>
@@ -135,6 +135,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{e2c8f24c-9afe-4390-a080-86c35816c2ef}">
 		<relationship name="effects">
+			<destination>{d43dcda9-cab8-4d25-a105-86498cb131a8}</destination>
 			<destination>{6a828995-c9ae-4d74-94b3-2d0af914ed17}</destination>
 			<destination>{3f9dc0cd-72bb-4b6c-aaf9-871a807a0828}</destination>
 		</relationship>
@@ -165,6 +166,20 @@
 			<destination>{110aaa35-e685-4ccb-bdb7-80c3566f5e97}</destination>
 			<destination>{046eaef0-0e6e-41b5-9114-c869e6c5c186}</destination>
 		</relationship>
+	</object>
+	<object class="SpatialiserEffect" id="{d43dcda9-cab8-4d25-a105-86498cb131a8}">
+		<property name="minimumDistance">
+			<value>50</value>
+		</property>
+		<property name="maximumDistance">
+			<value>550</value>
+		</property>
+		<property name="soundSize">
+			<value>10000</value>
+		</property>
+		<property name="userStereoSeparation">
+			<value>-115.989235</value>
+		</property>
 	</object>
 	<object class="PitchShifterEffect" id="{6a828995-c9ae-4d74-94b3-2d0af914ed17}">
 		<property name="pitch">
