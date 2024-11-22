@@ -10,7 +10,9 @@ local spells = {
 		spawn_probability = "0.2,0.2,0.3,0.6,0.7,0.3",
 		spawn_requires_flag = "card_unlocked_ss_friendly",
 		mana = 20,
+		price = 160,
 		action = function()
+			c.fire_rate_wait = c.fire_rate_wait + 10
 			c.extra_entities = c.extra_entities
 				.. "mods/spell_synthesis/files/spells/originals/friendly_fire/friendly_projectile.xml,data/entities/particles/tinyspark_green.xml,"
 			draw_actions(1, true)
@@ -27,8 +29,9 @@ local spells = {
 		spawn_probability = "0.2,0.2,0.3,0.6,0.7,0.3",
 		spawn_requires_flag = "card_unlocked_ss_friendly",
 		mana = 15,
+		price = 160,
 		action = function()
-			c.explosion_dont_damage_shooter = true
+			c.fire_rate_wait = c.fire_rate_wait + 10
 			c.extra_entities = c.extra_entities
 				.. "mods/spell_synthesis/files/spells/originals/friendly_fire/friendly_explosion.xml,data/entities/particles/tinyspark_green.xml,"
 			draw_actions(1, true)
@@ -48,7 +51,9 @@ local spells = {
 		spawn_probability = "0.2,0.2,0.3",
 		spawn_requires_flag = "action_ss_action_friendly_safe",
 		mana = 40,
+		price = 320,
 		action = function()
+			c.fire_rate_wait = c.fire_rate_wait + 15
 			c.extra_entities = c.extra_entities
 				.. "mods/spell_synthesis/files/spells/originals/friendly_fire/friendly_projectile.xml,mods/spell_synthesis/files/spells/originals/friendly_fire/friendly_explosion.xml,data/entities/particles/tinyspark_green.xml,"
 			draw_actions(1, true)
