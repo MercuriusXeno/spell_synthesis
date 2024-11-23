@@ -1,6 +1,6 @@
 local entity_id = EntityGetRootEntity(GetUpdatedEntityID())
 
-local projectile_component = EntityGetFirstComponent(entity_id, "ProjectileComponent") --[[@cast projectile_component number]]
+local projectile_component = EntityGetFirstComponent(entity_id, "ProjectileComponent") --[[@cast projectile_component component_id]]
 ComponentSetValue2(projectile_component, "friendly_fire", false)
 
 local area_damage_components = EntityGetComponentIncludingDisabled(entity_id, "AreaDamageComponent") or {}
