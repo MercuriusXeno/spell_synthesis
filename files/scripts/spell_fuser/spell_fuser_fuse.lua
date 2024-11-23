@@ -48,7 +48,8 @@ function fuser:finish_fusing(target_x, target_y)
 		local entity = self.current_fusion.entities[i]
 		EntityKill(entity)
 	end
-	local spell_to_spawn = self.current_fusion.result
+	SetRandomSeed(target_x + GameGetFrameNum(), target_y)
+	local spell_to_spawn = self.current_fusion.result[Random(1, #self.current_fusion.result)]
 	CreateItemActionEntity(spell_to_spawn, target_x, target_y)
 
 	local flag = string.format("action_%s", spell_to_spawn:lower())
@@ -79,7 +80,7 @@ function fuser:get_current_step()
 end
 
 --- Start fusing
---- @param result string
+--- @param result string[]
 --- @param entities entity_id[]
 function fuser:start_fusing(result, entities)
 	self.current_fusion = {
