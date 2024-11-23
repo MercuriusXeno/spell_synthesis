@@ -1,6 +1,7 @@
 local sprite_generator = dofile_once("mods/spell_synthesis/files/scripts/sprite_generator.lua") --- @type ss_sprite_generator
 
 ---@type action[]
+-- stylua: ignore
 local spells = {
 	{
 		id = "SS_LIGHT_BULLET_2",

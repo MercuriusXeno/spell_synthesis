@@ -1,4 +1,5 @@
 ---@type action[]
+-- stylua: ignore
 local spells = {
 	{ -- Friendly Projectile
 		id                     = "SS_FRIENDLY_PROJECTILE",
