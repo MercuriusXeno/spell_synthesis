@@ -18,9 +18,5 @@ function init(x, y, w, h, ...)
 		true
 	)
 
-	local entity = EntityLoad("mods/spell_synthesis/files/entities/fuser/base/fuser.xml", entity_x, entity_y)
-	if ModSettingGet("spell_synthesis.fuser_workshop") then
-		local workshop_entity = EntityLoad("mods/spell_synthesis/files/entities/fuser/base/fuser_workshop.xml", entity_x, entity_y)
-		EntityAddChild(entity, workshop_entity)
-	end
+	EntityLoad("mods/spell_synthesis/files/entities/fuser/fuser_no_base.xml", entity_x, entity_y)
 end
