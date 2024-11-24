@@ -3,7 +3,7 @@ local sprite_generator = dofile_once("mods/spell_synthesis/files/scripts/sprite_
 ---@type action[]
 -- stylua: ignore
 local spells = {
-	{
+	{ -- Spark Bolt
 		id = "SS_LIGHT_BULLET_2",
 		name = "$ss_action_light_bullet_2",
 		description = "$ss_actiondesc_light_bullet_2",
@@ -39,7 +39,7 @@ local spells = {
 			c.damage_critical_chance = c.damage_critical_chance + 10
 		end,
 	},
-	{
+	{ -- Digger
 		id = "SS_DIGGER_2",
 		name = "$ss_action_digger_2",
 		description = "$ss_actiondesc_digger_2",
@@ -70,6 +70,43 @@ local spells = {
 		action = function()
 			add_projectile("mods/spell_synthesis/files/spells/evolutions/digger/ss_digger_3.xml")
 			current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10
+		end,
+	},
+	{ --Bouncy burst
+		id          = "SS_RUBBER_BALL_2",
+		name 		= "$ss_action_rubber_ball_2",
+		description = "$ss_actiondesc_rubber_ball_2",
+		sprite 		= "mods/spell_synthesis/files/spells/evolutions/rubber_ball/rubber_ball_2.png",
+		related_projectiles	= {"mods/spell_synthesis/files/spells/evolutions/rubber_ball/rubber_ball_2.xml"},
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "10",
+		spawn_probability                 = "0",
+		price = 120,
+		mana = 10,
+		action 		= function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/rubber_ball/rubber_ball_2.xml")
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/rubber_ball/rubber_ball_2.xml")
+			c.fire_rate_wait = c.fire_rate_wait - 2
+			c.spread_degrees = c.spread_degrees + 7.0
+		end,
+	},
+	{
+		id          = "SS_RUBBER_BALL_3",
+		name 		= "$ss_action_rubber_ball_3",
+		description = "$ss_actiondesc_rubber_ball_3",
+		sprite 		= "mods/spell_synthesis/files/spells/evolutions/rubber_ball/rubber_ball_3.png",
+		related_projectiles	= {"mods/spell_synthesis/files/spells/evolutions/rubber_ball/rubber_ball_3.xml"},
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "10",
+		spawn_probability                 = "0",
+		price = 240,
+		mana = 20,
+		action 		= function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/rubber_ball/rubber_ball_3.xml")
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/rubber_ball/rubber_ball_3.xml")
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/rubber_ball/rubber_ball_3.xml")
+			c.fire_rate_wait = c.fire_rate_wait - 2
+			c.spread_degrees = c.spread_degrees + 14.0
 		end,
 	},
 }

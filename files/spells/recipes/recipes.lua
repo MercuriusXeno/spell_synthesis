@@ -44,4 +44,12 @@ SSRecipes = {
 		spells = { "SPITTER_TIER_2", "SPITTER_TIER_2" },
 		result = { "SPITTER_TIER_3" },
 	},
+	{
+		spells = { "RUBBER_BALL", "RUBBER_BALL" },
+		result = { "SS_RUBBER_BALL_2" },
+	},
+	{
+		spells = { "SS_RUBBER_BALL_2", "SS_RUBBER_BALL_2" },
+		result = { "SS_RUBBER_BALL_3" },
+	},
 }
