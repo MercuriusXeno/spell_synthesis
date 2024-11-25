@@ -1,0 +1,7 @@
+<Entity name="fuser">
+	<Base file="mods/spell_synthesis/files/entities/fuser/base/fuser.xml" include_children="1"></Base>
+	<LuaComponent
+		script_source_file="mods/spell_synthesis/files/biomes/robobase/fuser/fuser_create_robobase.lua"
+		execute_every_n_frame="15">
+	</LuaComponent>
+</Entity>
