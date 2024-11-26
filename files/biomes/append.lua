@@ -5,4 +5,5 @@ ModLuaFileAppend("data/scripts/biomes/coalmine.lua", "mods/spell_synthesis/files
 ModLuaFileAppend("data/scripts/biomes/coalmine_alt.lua", "mods/spell_synthesis/files/biomes/coalmine/coalmine.lua")
 ModLuaFileAppend("data/scripts/biomes/excavationsite.lua", "mods/spell_synthesis/files/biomes/excavationsite/excavationsite.lua")
 ModLuaFileAppend("data/scripts/biomes/snowcave.lua", "mods/spell_synthesis/files/biomes/snowcave/snowcave.lua")
+ModLuaFileAppend("data/scripts/biomes/snowcastle.lua", "mods/spell_synthesis/files/biomes/snowcastle/snowcastle.lua")
 ModLuaFileAppend("data/scripts/biomes/robobase.lua", "mods/spell_synthesis/files/biomes/robobase/robobase.lua")
