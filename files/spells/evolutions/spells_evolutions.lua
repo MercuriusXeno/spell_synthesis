@@ -109,6 +109,40 @@ local spells = {
 			c.spread_degrees = c.spread_degrees + 14.0
 		end,
 	},
+	{ -- Energy Sphere
+		id          = "SS_BOUNCY_ORB_2",
+		name 		= "$ss_action_bouncy_orb_2",
+		description = "$ss_actiondesc_bouncy_orb_2",
+		sprite 		= sprite_generator:add_level_glow("data/ui_gfx/gun_actions/bouncy_orb.png", 2),
+		related_projectiles	= {"mods/spell_synthesis/files/spells/evolutions/bouncy_orb/bouncy_orb_2.xml"},
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "10",
+		spawn_probability                 = "0",
+		price = 240,
+		mana = 30,
+		action 		= function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/bouncy_orb/bouncy_orb_2.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 15
+			shot_effects.recoil_knockback = 20.0
+		end,
+	},
+	{
+		id          = "SS_BOUNCY_ORB_3",
+		name 		= "$ss_action_bouncy_orb_3",
+		description = "$ss_actiondesc_bouncy_orb_3",
+		sprite 		= sprite_generator:add_level_glow("data/ui_gfx/gun_actions/bouncy_orb.png", 3),
+		related_projectiles	= {"mods/spell_synthesis/files/spells/evolutions/bouncy_orb/bouncy_orb_3.xml"},
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "10",
+		spawn_probability                 = "0",
+		price = 500,
+		mana = 40,
+		action 		= function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/bouncy_orb/bouncy_orb_3.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 30
+			shot_effects.recoil_knockback = 20.0
+		end,
+	},
 }
 
 if actions then
