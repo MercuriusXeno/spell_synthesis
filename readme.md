@@ -9,13 +9,13 @@ This mod adds new unlockable spells, puzzles, and spell fusion mechanics.
 ## Modding
 <details><summary>Where to add new spells</summary>
 
-- [mods/spell_synthesis/files/spells/originals/spells_original.lua](files/spells/originals/spells_original.lua)
+- [mods/spell_synthesis/files/spells/originals/](files/spells/originals/)
 
 </details>
 
 <details><summary>Where to add evolution spells</summary>
 
-- [mods/spell_synthesis/files/spells/evolutions/spells_evolutions.lua](files/spells/evolutions/spells_evolutions.lua)
+- [mods/spell_synthesis/files/spells/evolutions/](files/spells/evolutions/)
 
 </details>
 
