@@ -92,4 +92,20 @@ SSRecipes = {
 		spells = { "SS_ARROW_2", "SS_ARROW_2" },
 		result = { "SS_ARROW_3" },
 	},
+	{
+		spells = { "GRENADE", "GRENADE" },
+		result = { "GRENADE_TIER_2" },
+	},
+	{
+		spells = { "GRENADE_TIER_2", "GRENADE_TIER_2" },
+		result = { "GRENADE_TIER_3" },
+	},
+	{
+		spells = { "ROCKET", "ROCKET" },
+		result = { "ROCKET_TIER_2" },
+	},
+	{
+		spells = { "ROCKET_TIER_2", "ROCKET_TIER_2" },
+		result = { "ROCKET_TIER_3" },
+	},
 }
