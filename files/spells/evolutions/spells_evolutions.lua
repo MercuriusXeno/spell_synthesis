@@ -181,6 +181,46 @@ local spells = {
 			c.damage_critical_chance = c.damage_critical_chance + 7
 		end,
 	},
+	{ -- Magic bolt
+		id          = "SS_HEAVY_BULLET_2",
+		name 		= "$action_heavy_bullet",
+		description = "$actiondesc_heavy_bullet",
+		sprite 		= sprite_generator:add_level_glow("data/ui_gfx/gun_actions/heavy_bullet.png", 2),
+		related_projectiles	= {"mods/spell_synthesis/files/spells/evolutions/heavy_bullet/bullet_heavy_2.xml"},
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "10",
+		spawn_probability                 = "0",
+		price = 200,
+		mana = 45,
+		action 		= function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/heavy_bullet/bullet_heavy_2.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 10
+			c.screenshake = c.screenshake + 2.5
+			c.spread_degrees = c.spread_degrees + 5.0
+			c.damage_critical_chance = c.damage_critical_chance + 5
+			shot_effects.recoil_knockback = shot_effects.recoil_knockback + 25.0
+		end,
+	},
+	{
+		id          = "SS_HEAVY_BULLET_3",
+		name 		= "$action_heavy_bullet",
+		description = "$actiondesc_heavy_bullet",
+		sprite 		= sprite_generator:add_level_glow("data/ui_gfx/gun_actions/heavy_bullet.png", 3),
+		related_projectiles	= {"mods/spell_synthesis/files/spells/evolutions/heavy_bullet/bullet_heavy_3.xml"},
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "10",
+		spawn_probability                 = "0",
+		price = 200,
+		mana = 60,
+		action 		= function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/heavy_bullet/bullet_heavy_3.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 20
+			c.screenshake = c.screenshake + 2.5
+			c.spread_degrees = c.spread_degrees + 5.0
+			c.damage_critical_chance = c.damage_critical_chance + 7
+			shot_effects.recoil_knockback = shot_effects.recoil_knockback + 10.0
+		end,
+	},
 }
 
 if actions then

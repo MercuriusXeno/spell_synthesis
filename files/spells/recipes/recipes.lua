@@ -60,4 +60,12 @@ SSRecipes = {
 		spells = { "SS_BULLET_2", "SS_BULLET_2" },
 		result = { "SS_BULLET_3" },
 	},
+	{
+		spells = { "HEAVY_BULLET", "HEAVY_BULLET" },
+		result = { "SS_HEAVY_BULLET_2" },
+	},
+	{
+		spells = { "SS_HEAVY_BULLET_2", "SS_HEAVY_BULLET_2" },
+		result = { "SS_HEAVY_BULLET_3" },
+	},
 }
