@@ -52,4 +52,12 @@ SSRecipes = {
 		spells = { "SS_RUBBER_BALL_2", "SS_RUBBER_BALL_2" },
 		result = { "SS_RUBBER_BALL_3" },
 	},
+	{
+		spells = { "BULLET", "BULLET" },
+		result = { "SS_BULLET_2" },
+	},
+	{
+		spells = { "SS_BULLET_2", "SS_BULLET_2" },
+		result = { "SS_BULLET_3" },
+	},
 }

@@ -143,6 +143,44 @@ local spells = {
 			shot_effects.recoil_knockback = 20.0
 		end,
 	},
+	{ -- Magic arrow
+		id          = "SS_BULLET_2",
+		name 		= "$action_bullet",
+		description = "$actiondesc_bullet",
+		sprite 		= sprite_generator:add_level_glow("data/ui_gfx/gun_actions/bullet.png", 2),
+		related_projectiles	= {"mods/spell_synthesis/files/spells/evolutions/bullet/bullet_2.xml"},
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "10",
+		spawn_probability                 = "0",
+		price = 150,
+		mana = 30,
+		action 		= function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/bullet/bullet_2.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 6
+			c.screenshake = c.screenshake + 2
+			c.spread_degrees = c.spread_degrees + 2.0
+			c.damage_critical_chance = c.damage_critical_chance + 5
+		end,
+	},
+	{ 
+		id          = "SS_BULLET_3",
+		name 		= "$action_bullet",
+		description = "$actiondesc_bullet",
+		sprite 		= sprite_generator:add_level_glow("data/ui_gfx/gun_actions/bullet.png", 3),
+		related_projectiles	= {"mods/spell_synthesis/files/spells/evolutions/bullet/bullet_3.xml"},
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "10",
+		spawn_probability                 = "0",
+		price = 150,
+		mana = 40,
+		action 		= function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/bullet/bullet_3.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 9
+			c.screenshake = c.screenshake + 2
+			c.spread_degrees = c.spread_degrees + 1.0
+			c.damage_critical_chance = c.damage_critical_chance + 7
+		end,
+	},
 }
 
 if actions then
