@@ -296,6 +296,41 @@ local spells = {
 			current_reload_time = current_reload_time - 10
 		end,
 	},
+	{ -- Arrow
+		id          = "SS_ARROW_2",
+		name 		= "$action_arrow",
+		description = "$actiondesc_arrow",
+		sprite 		= sprite_generator:add_level_glow("data/ui_gfx/gun_actions/arrow.png", 2),
+		related_projectiles	= {"mods/spell_synthesis/files/spells/evolutions/arrow/arrow_2.xml"},
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "10",
+		spawn_probability                 = "0",
+		price = 140,
+		mana = 20,
+		action 		= function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/arrow/arrow_2.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 15
+			c.spread_degrees = c.spread_degrees - 25
+			shot_effects.recoil_knockback = 10.0
+		end,
+	},
+	{
+		id          = "SS_ARROW_3",
+		name 		= "$action_arrow",
+		description = "$actiondesc_arrow",
+		sprite 		= sprite_generator:add_level_glow("data/ui_gfx/gun_actions/arrow.png", 3),
+		related_projectiles	= {"mods/spell_synthesis/files/spells/evolutions/arrow/arrow_3.xml"},
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "10",
+		spawn_probability                 = "0",
+		price = 140,
+		mana = 25,
+		action 		= function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/arrow/arrow_3.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 20
+			c.spread_degrees = c.spread_degrees - 30
+		end,
+	},
 }
 
 if actions then

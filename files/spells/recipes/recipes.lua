@@ -84,4 +84,12 @@ SSRecipes = {
 		spells = { "SS_BUBBLESHOT_2", "SS_BUBBLESHOT_2" },
 		result = { "SS_BUBBLESHOT_3" },
 	},
+	{
+		spells = { "ARROW", "ARROW" },
+		result = { "SS_ARROW_2" },
+	},
+	{
+		spells = { "SS_ARROW_2", "SS_ARROW_2" },
+		result = { "SS_ARROW_3" },
+	},
 }
