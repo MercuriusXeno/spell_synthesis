@@ -22,7 +22,7 @@
 ---@field mana number? default 10
 ---@field sprite_unidentified string?
 ---@field deck_index integer?
----@field related_projectiles string[]? used for add trigger
+---@field related_projectiles {[1]:string, [2]:number?}? used for add trigger
 
 ---@alias state table<string, any>
 

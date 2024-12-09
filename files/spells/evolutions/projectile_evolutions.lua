@@ -77,7 +77,7 @@ local spells = {
 		name                = "$ss_action_rubber_ball_2",
 		description         = "$ss_actiondesc_rubber_ball_2",
 		sprite              = "mods/spell_synthesis/files/spells/evolutions/rubber_ball/rubber_ball_2.png",
-		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/rubber_ball/rubber_ball_2.xml", },
+		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/rubber_ball/rubber_ball_2.xml", 2, },
 		type                = ACTION_TYPE_PROJECTILE,
 		spawn_level         = "10",
 		spawn_probability   = "0",
@@ -95,7 +95,7 @@ local spells = {
 		name                = "$ss_action_rubber_ball_3",
 		description         = "$ss_actiondesc_rubber_ball_3",
 		sprite              = "mods/spell_synthesis/files/spells/evolutions/rubber_ball/rubber_ball_3.png",
-		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/rubber_ball/rubber_ball_3.xml", },
+		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/rubber_ball/rubber_ball_3.xml", 3, },
 		type                = ACTION_TYPE_PROJECTILE,
 		spawn_level         = "10",
 		spawn_probability   = "0",
@@ -297,17 +297,17 @@ local spells = {
 		end,
 	},
 	{ -- Arrow
-		id          = "SS_ARROW_2",
-		name 		= "$action_arrow",
-		description = "$actiondesc_arrow",
-		sprite 		= sprite_generator:add_level_glow("data/ui_gfx/gun_actions/arrow.png", 2),
-		related_projectiles	= {"mods/spell_synthesis/files/spells/evolutions/arrow/arrow_2.xml"},
-		type 		= ACTION_TYPE_PROJECTILE,
-		spawn_level                       = "10",
-		spawn_probability                 = "0",
-		price = 140,
-		mana = 20,
-		action 		= function()
+		id                  = "SS_ARROW_2",
+		name                = "$action_arrow",
+		description         = "$actiondesc_arrow",
+		sprite              = sprite_generator:add_level_glow("data/ui_gfx/gun_actions/arrow.png", 2),
+		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/arrow/arrow_2.xml", },
+		type                = ACTION_TYPE_PROJECTILE,
+		spawn_level         = "10",
+		spawn_probability   = "0",
+		price               = 140,
+		mana                = 20,
+		action              = function()
 			add_projectile("mods/spell_synthesis/files/spells/evolutions/arrow/arrow_2.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 15
 			c.spread_degrees = c.spread_degrees - 25
@@ -315,20 +315,61 @@ local spells = {
 		end,
 	},
 	{
-		id          = "SS_ARROW_3",
-		name 		= "$action_arrow",
-		description = "$actiondesc_arrow",
-		sprite 		= sprite_generator:add_level_glow("data/ui_gfx/gun_actions/arrow.png", 3),
-		related_projectiles	= {"mods/spell_synthesis/files/spells/evolutions/arrow/arrow_3.xml"},
-		type 		= ACTION_TYPE_PROJECTILE,
-		spawn_level                       = "10",
-		spawn_probability                 = "0",
-		price = 140,
-		mana = 25,
-		action 		= function()
+		id                  = "SS_ARROW_3",
+		name                = "$action_arrow",
+		description         = "$actiondesc_arrow",
+		sprite              = sprite_generator:add_level_glow("data/ui_gfx/gun_actions/arrow.png", 3),
+		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/arrow/arrow_3.xml", },
+		type                = ACTION_TYPE_PROJECTILE,
+		spawn_level         = "10",
+		spawn_probability   = "0",
+		price               = 140,
+		mana                = 25,
+		action              = function()
 			add_projectile("mods/spell_synthesis/files/spells/evolutions/arrow/arrow_3.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 20
 			c.spread_degrees = c.spread_degrees - 30
+		end,
+	},
+	{ -- Triplicate bolt
+		id                  = "SS_BUCKSHOT_2",
+		name                = "$action_buckshot",
+		description         = "$actiondesc_buckshot",
+		sprite              = sprite_generator:add_level_glow("data/ui_gfx/gun_actions/buckshot.png", 2),
+		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/buckshot/buckshot_2.xml", 4, },
+		type                = ACTION_TYPE_PROJECTILE,
+		spawn_level         = "10",
+		spawn_probability   = "0",
+		price               = 160,
+		mana                = 30,
+		action              = function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/buckshot/buckshot_2.xml")
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/buckshot/buckshot_2.xml")
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/buckshot/buckshot_2.xml")
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/buckshot/buckshot_2.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 10
+			c.spread_degrees = c.spread_degrees + 18.0
+		end,
+	},
+	{
+		id                  = "SS_BUCKSHOT_3",
+		name                = "$action_buckshot",
+		description         = "$actiondesc_buckshot",
+		sprite              = sprite_generator:add_level_glow("data/ui_gfx/gun_actions/buckshot.png", 3),
+		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/buckshot/buckshot_3.xml", 5, },
+		type                = ACTION_TYPE_PROJECTILE,
+		spawn_level         = "10",
+		spawn_probability   = "0",
+		price               = 160,
+		mana                = 40,
+		action              = function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/buckshot/buckshot_3.xml")
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/buckshot/buckshot_3.xml")
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/buckshot/buckshot_3.xml")
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/buckshot/buckshot_3.xml")
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/buckshot/buckshot_3.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 12
+			c.spread_degrees = c.spread_degrees + 22.0
 		end,
 	},
 }

@@ -108,4 +108,12 @@ SSRecipes = {
 		spells = { "ROCKET_TIER_2", "ROCKET_TIER_2" },
 		result = { "ROCKET_TIER_3" },
 	},
+	{
+		spells = { "BUCKSHOT", "BUCKSHOT" },
+		result = { "SS_BUCKSHOT_2" },
+	},
+	{
+		spells = { "SS_BUCKSHOT_2", "SS_BUCKSHOT_2" },
+		result = { "SS_BUCKSHOT_3" },
+	},
 }
