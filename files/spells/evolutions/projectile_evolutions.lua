@@ -225,20 +225,40 @@ local spells = {
 		id                  = "SS_SLOW_BULLET_2",
 		name                = "$action_slow_bullet",
 		description         = "$actiondesc_slow_bullet",
-		sprite              = "data/ui_gfx/gun_actions/slow_bullet.png",
-		related_projectiles = { "data/entities/projectiles/deck/bullet_slow.xml", },
+		sprite              = sprite_generator:add_level_glow("data/ui_gfx/gun_actions/slow_bullet.png", 2),
+		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/slow_bullet/bullet_slow_2.xml", },
 		type                = ACTION_TYPE_PROJECTILE,
 		spawn_level         = "10",
 		spawn_probability   = "0",
 		price               = 160,
-		mana                = 30,
+		mana                = 40,
 		custom_xml_file     = "data/entities/misc/custom_cards/bullet_slow.xml",
 		action              = function()
-			add_projectile("data/entities/projectiles/deck/bullet_slow.xml")
-			c.fire_rate_wait = c.fire_rate_wait + 6
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/slow_bullet/bullet_slow_2.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 10
 			c.screenshake = c.screenshake + 2
 			c.spread_degrees = c.spread_degrees + 3.6
 			shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
+		end,
+	},
+	{
+		id                  = "SS_SLOW_BULLET_3",
+		name                = "$action_slow_bullet",
+		description         = "$actiondesc_slow_bullet",
+		sprite              = sprite_generator:add_level_glow("data/ui_gfx/gun_actions/slow_bullet.png", 3),
+		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/slow_bullet/bullet_slow_3.xml", },
+		type                = ACTION_TYPE_PROJECTILE,
+		spawn_level         = "10",
+		spawn_probability   = "0",
+		price               = 160,
+		mana                = 55,
+		custom_xml_file     = "data/entities/misc/custom_cards/bullet_slow.xml",
+		action              = function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/slow_bullet/bullet_slow_3.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 20
+			c.screenshake = c.screenshake + 2
+			c.spread_degrees = c.spread_degrees + 3.6
+			shot_effects.recoil_knockback = shot_effects.recoil_knockback + 15.0
 		end,
 	},
 }

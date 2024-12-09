@@ -68,4 +68,12 @@ SSRecipes = {
 		spells = { "SS_HEAVY_BULLET_2", "SS_HEAVY_BULLET_2" },
 		result = { "SS_HEAVY_BULLET_3" },
 	},
+	{
+		spells = { "SLOW_BULLET", "SLOW_BULLET" },
+		result = { "SS_SLOW_BULLET_2" },
+	},
+	{
+		spells = { "SS_SLOW_BULLET_2", "SS_SLOW_BULLET_2" },
+		result = { "SS_SLOW_BULLET_3" },
+	},
 }
