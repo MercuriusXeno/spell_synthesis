@@ -1,6 +1,7 @@
 local spell_list = {
-	"mods/spell_synthesis/files/spells/evolutions/spells_evolutions.lua",
-	"mods/spell_synthesis/files/spells/originals/spells_original.lua",
+	"mods/spell_synthesis/files/spells/evolutions/projectile_evolutions.lua",
+	"mods/spell_synthesis/files/spells/originals/projectiles_original.lua",
+	"mods/spell_synthesis/files/spells/originals/modifiers_original.lua",
 }
 
 for i = 1, #spell_list do
@@ -13,7 +14,9 @@ local compat_list = {
 	"copis_things",
 }
 
-for i=1, #compat_list do
+for i = 1, #compat_list do
 	local mod = compat_list[i]
-	if ModIsEnabled(mod) then ModLuaFileAppend("data/scripts/gun/gun_actions.lua", table.concat{"mods/spell_synthesis/files/spells/compatibility/", mod, "/spells.lua"}) end
+	if ModIsEnabled(mod) then
+		ModLuaFileAppend("data/scripts/gun/gun_actions.lua", table.concat({ "mods/spell_synthesis/files/spells/compatibility/", mod, "/spells.lua" }))
+	end
 end
