@@ -261,6 +261,41 @@ local spells = {
 			shot_effects.recoil_knockback = shot_effects.recoil_knockback + 15.0
 		end,
 	},
+	{ -- Bubble spark
+		id                  = "SS_BUBBLESHOT_2",
+		name                = "$action_bubbleshot",
+		description         = "$actiondesc_bubbleshot",
+		sprite              = sprite_generator:add_level_glow("data/ui_gfx/gun_actions/bubbleshot.png", 2),
+		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/bubbleshot/bubbleshot_2.xml", },
+		type                = ACTION_TYPE_PROJECTILE,
+		spawn_level         = "10",
+		spawn_probability   = "0",
+		price               = 100,
+		mana                = 10,
+		action              = function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/bubbleshot/bubbleshot_2.xml")
+			c.fire_rate_wait = c.fire_rate_wait - 8
+			c.dampening = 0.2
+		end,
+	},
+	{
+		id                  = "SS_BUBBLESHOT_3",
+		name                = "$action_bubbleshot",
+		description         = "$actiondesc_bubbleshot",
+		sprite              = sprite_generator:add_level_glow("data/ui_gfx/gun_actions/bubbleshot.png", 3),
+		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/bubbleshot/bubbleshot_3.xml", },
+		type                = ACTION_TYPE_PROJECTILE,
+		spawn_level         = "10",
+		spawn_probability   = "0",
+		price               = 100,
+		mana                = 20,
+		action              = function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/bubbleshot/bubbleshot_3.xml")
+			c.fire_rate_wait = c.fire_rate_wait - 15
+			c.dampening = 0.4
+			current_reload_time = current_reload_time - 10
+		end,
+	},
 }
 
 if actions then
