@@ -74,9 +74,7 @@ function sprite_generator:blend_colors(color1, color2)
 
 	-- Compute final alpha and avoid division by zero
 	local out_alpha = src_alpha + dst_alpha * (1 - src_alpha)
-	if out_alpha == 0 then
-		return self:color_abgr_merge(0, 0, 0, 0)
-	end
+	if out_alpha == 0 then return self:color_abgr_merge(0, 0, 0, 0) end
 
 	-- Blend RGB components
 	local r = (s_r * src_alpha + d_r * dst_alpha * (1 - src_alpha)) / out_alpha
