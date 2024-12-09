@@ -51,7 +51,7 @@ local spells = {
 		type                   = ACTION_TYPE_MODIFIER,
 		spawn_level            = "4,5,6",
 		spawn_probability      = "0.2,0.2,0.3",
-		spawn_requires_flag    = "action_ss_action_friendly_safe",
+		spawn_requires_flag    = "action_ss_friendly_safe",
 		mana                   = 40,
 		price                  = 320,
 		action                 = function()
@@ -66,6 +66,8 @@ local spells = {
 if actions then
 	local index = #actions
 	for i = 1, #spells do
-		actions[index + i] = spells[i]
+		local spell = spells[i]
+		if not spell.spawn_requires_flag then spell.spawn_requires_flag = string.format("action_%s", spell.id:lower()) end
+		actions[index + i] = spell
 	end
 end

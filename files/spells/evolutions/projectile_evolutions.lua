@@ -377,6 +377,8 @@ local spells = {
 if actions then
 	local index = #actions
 	for i = 1, #spells do
-		actions[index + i] = spells[i]
+		local spell = spells[i]
+		if not spell.spawn_requires_flag then spell.spawn_requires_flag = string.format("action_%s", spell.id:lower()) end
+		actions[index + i] = spell
 	end
 end
