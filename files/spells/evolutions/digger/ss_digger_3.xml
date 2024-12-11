@@ -1,6 +1,5 @@
 <Entity name="$projectile_default" tags="projectile_player">
-	<Base file="mods/spell_synthesis/files/spells/evolutions/digger/ss_digger_2.xml"
-		include_children="1">
+	<Base file="mods/spell_synthesis/files/spells/evolutions/digger/ss_digger_2.xml">
 		<ProjectileComponent>
 			<damage_by_type
 				drill="0.4">

@@ -1,6 +1,5 @@
 <Entity name="$projectile_default" tags="projectile_player">
-	<Base file="mods/spell_synthesis/files/spells/evolutions/heal_bullet/heal_bullet_2.xml"
-		include_children="1">
+	<Base file="mods/spell_synthesis/files/spells/evolutions/heal_bullet/heal_bullet_2.xml">
 		<ProjectileComponent
 			speed_min="550"
 			speed_max="600">
