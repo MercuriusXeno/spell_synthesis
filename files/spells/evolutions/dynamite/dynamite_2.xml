@@ -1,5 +1,5 @@
 <Entity>
-	<Base file="data/entities/projectiles/bomb.xml">
+	<Base file="data/entities/projectiles/deck/tnt.xml">
 		<ProjectileComponent>
 			<config_explosion
 				ray_energy="7000000"
@@ -8,7 +8,7 @@
 		</ProjectileComponent>
 
 		<VariableStorageComponent
-			value_string="mods/spell_synthesis/files/spells/evolutions/bomb/bomb_2.xml">
+			value_string="mods/spell_synthesis/files/spells/evolutions/dynamite/dynamite_2.xml">
 		</VariableStorageComponent>
 	</Base>
 </Entity>

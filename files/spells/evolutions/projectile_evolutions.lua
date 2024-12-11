@@ -440,6 +440,42 @@ local spells = {
 			c.fire_rate_wait = c.fire_rate_wait + 100
 		end,
 	},
+	{ -- Dynamite
+		id                  = "SS_DYNAMITE_2",
+		name                = "$action_dynamite",
+		description         = "$actiondesc_dynamite",
+		sprite              = sprite_generator:add_level_glow("data/ui_gfx/gun_actions/dynamite.png", 2),
+		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/dynamite/dynamite_2.xml", },
+		type                = ACTION_TYPE_PROJECTILE,
+		spawn_level         = "10",
+		spawn_probability   = "0",
+		price               = 160,
+		mana                = 70,
+		max_uses            = 24,
+		action              = function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/dynamite/dynamite_2.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 50
+			c.spread_degrees = c.spread_degrees + 6.0
+		end,
+	},
+	{
+		id                  = "SS_DYNAMITE_3",
+		name                = "$action_dynamite",
+		description         = "$actiondesc_dynamite",
+		sprite              = sprite_generator:add_level_glow("data/ui_gfx/gun_actions/dynamite.png", 3),
+		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/dynamite/dynamite_3.xml", },
+		type                = ACTION_TYPE_PROJECTILE,
+		spawn_level         = "10",
+		spawn_probability   = "0",
+		price               = 160,
+		mana                = 80,
+		max_uses            = 40,
+		action              = function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/dynamite/dynamite_3.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 50
+			c.spread_degrees = c.spread_degrees + 6.0
+		end,
+	},
 }
 
 if actions then
