@@ -1,0 +1,20 @@
+<Entity name="$projectile_default" tags="projectile_player">
+	<Base file="mods/spell_synthesis/files/spells/evolutions/heal_bullet/heal_bullet_2.xml"
+		include_children="1">
+		<ProjectileComponent
+			speed_min="550"
+			speed_max="600">
+			<damage_by_type
+				healing="-0.70">
+			</damage_by_type>
+		</ProjectileComponent>
+
+		<VariableStorageComponent
+			value_string="mods/spell_synthesis/files/spells/evolutions/heal_bullet/heal_bullet_3.xml">
+		</VariableStorageComponent>
+
+		<HitEffectComponent
+			value="9">
+		</HitEffectComponent>
+	</Base>
+</Entity>

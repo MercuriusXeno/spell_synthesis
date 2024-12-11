@@ -116,4 +116,20 @@ SSRecipes = {
 		spells = { "SS_BUCKSHOT_2", "SS_BUCKSHOT_2" },
 		result = { "SS_BUCKSHOT_3" },
 	},
+	{
+		spells = { "ANTIHEAL", "ANTIHEAL" },
+		result = { "SS_HEAL_BULLET_2" },
+	},
+	{
+		spells = { "HEAL_BULLET", "ANTIHEAL" },
+		result = { "SS_HEAL_BULLET_2" },
+	},
+	{
+		spells = { "HEAL_BULLET", "HEAL_BULLET" },
+		result = { "SS_HEAL_BULLET_2" },
+	},
+	{
+		spells = { "SS_HEAL_BULLET_2", "SS_HEAL_BULLET_2" },
+		result = { "SS_HEAL_BULLET_3" },
+	},
 }
