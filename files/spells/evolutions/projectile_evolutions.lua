@@ -476,6 +476,40 @@ local spells = {
 			c.spread_degrees = c.spread_degrees + 6.0
 		end,
 	},
+	{ -- Disc projectile
+		id                  = "SS_DISC_BULLET_2",
+		name                = "$action_disc_bullet",
+		description         = "$actiondesc_disc_bullet",
+		sprite              = sprite_generator:add_level_glow("data/ui_gfx/gun_actions/disc_bullet.png", 2),
+		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/disc_bullet/disc_bullet_2.xml", },
+		type                = ACTION_TYPE_PROJECTILE,
+		spawn_level         = "10",
+		spawn_probability   = "0",
+		price               = 120,
+		mana                = 25,
+		action              = function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/disc_bullet/disc_bullet_2.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 15
+			c.spread_degrees = c.spread_degrees + 2.0
+			shot_effects.recoil_knockback = 10.0
+		end,
+	},
+	{
+		id                  = "SS_DISC_BULLET_3",
+		name                = "$action_disc_bullet",
+		description         = "$actiondesc_disc_bullet",
+		sprite              = sprite_generator:add_level_glow("data/ui_gfx/gun_actions/disc_bullet.png", 3),
+		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/disc_bullet/disc_bullet_3.xml", },
+		type                = ACTION_TYPE_PROJECTILE,
+		spawn_level         = "10",
+		spawn_probability   = "0",
+		price               = 120,
+		mana                = 40,
+		action              = function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/disc_bullet/disc_bullet_3.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 30
+		end,
+	},
 }
 
 if actions then

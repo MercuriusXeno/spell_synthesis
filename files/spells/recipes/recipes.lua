@@ -148,4 +148,12 @@ SSRecipes = {
 		spells = { "SS_DYNAMITE_2", "SS_DYNAMITE_2" },
 		result = { "SS_DYNAMITE_3" },
 	},
+	{
+		spells = { "DISC_BULLET", "DISC_BULLET" },
+		result = { "SS_DISC_BULLET_2" },
+	},
+	{
+		spells = { "SS_DISC_BULLET_2", "SS_DISC_BULLET_2" },
+		result = { "SS_DISC_BULLET_3" },
+	},
 }
