@@ -1,0 +1,14 @@
+<Entity>
+	<Base file="data/entities/projectiles/bomb.xml" include_children="1">
+		<ProjectileComponent>
+			<config_explosion
+				ray_energy="7000000"
+				max_durability_to_destroy="12">
+      		</config_explosion>
+		</ProjectileComponent>
+
+		<VariableStorageComponent
+			value_string="mods/spell_synthesis/files/spells/evolutions/bomb/bomb_2.xml">
+		</VariableStorageComponent>
+	</Base>
+</Entity>

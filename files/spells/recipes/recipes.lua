@@ -132,4 +132,12 @@ SSRecipes = {
 		spells = { "SS_HEAL_BULLET_2", "SS_HEAL_BULLET_2" },
 		result = { "SS_HEAL_BULLET_3" },
 	},
+	{
+		spells = { "BOMB", "BOMB" },
+		result = { "SS_BOMB_2" },
+	},
+	{
+		spells = { "SS_BOMB_2", "SS_BOMB_2" },
+		result = { "SS_BOMB_3" },
+	},
 }

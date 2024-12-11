@@ -385,7 +385,6 @@ local spells = {
 		mana                = 30,
 		max_uses            = 30,
 		never_unlimited     = true,
-		custom_xml_file     = "data/entities/misc/custom_cards/heal_bullet.xml",
 		action              = function()
 			add_projectile("mods/spell_synthesis/files/spells/evolutions/heal_bullet/heal_bullet_2.xml")
 		end,
@@ -403,9 +402,42 @@ local spells = {
 		mana                = 40,
 		max_uses            = 40,
 		never_unlimited     = true,
-		custom_xml_file     = "data/entities/misc/custom_cards/heal_bullet.xml",
 		action              = function()
 			add_projectile("mods/spell_synthesis/files/spells/evolutions/heal_bullet/heal_bullet_3.xml")
+		end,
+	},
+	{ -- Bomb
+		id                  = "SS_BOMB_2",
+		name                = "$action_bomb",
+		description         = "$actiondesc_bomb",
+		sprite              = sprite_generator:add_level_glow("data/ui_gfx/gun_actions/bomb.png", 2),
+		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/bomb/bomb_2.xml", },
+		type                = ACTION_TYPE_PROJECTILE,
+		spawn_level         = "10",
+		spawn_probability   = "0",
+		price               = 200,
+		mana                = 40,
+		max_uses            = 6,
+		action              = function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/bomb/bomb_2.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 100
+		end,
+	},
+	{
+		id                  = "SS_BOMB_3",
+		name                = "$action_bomb",
+		description         = "$actiondesc_bomb",
+		sprite              = sprite_generator:add_level_glow("data/ui_gfx/gun_actions/bomb.png", 3),
+		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/bomb/bomb_3.xml", },
+		type                = ACTION_TYPE_PROJECTILE,
+		spawn_level         = "10",
+		spawn_probability   = "0",
+		price               = 200,
+		mana                = 70,
+		max_uses            = 10,
+		action              = function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/bomb/bomb_3.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 100
 		end,
 	},
 }
