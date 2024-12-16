@@ -138,7 +138,7 @@ do -- gui helpers
 	end
 
 	--- @param gui gui
-	--- @param setting mod_setting_boolean
+	--- @param setting mod_setting_better_boolean
 	function G.toggle_checkbox_boolean(gui, setting)
 		local setting_name = setting.id or ""
 		local value = U.get_setting_next(setting_name)
@@ -173,7 +173,7 @@ do -- gui helpers
 	end
 
 	--- @param gui gui
-	--- @param setting mod_setting_number
+	--- @param setting mod_setting_better_number
 	--- @return number, number
 	function G.mod_setting_number(gui, setting)
 		GuiLayoutBeginHorizontal(gui, 0, 0, true, 0, 0)
@@ -229,7 +229,7 @@ end
 
 local S = {}
 do -- Settings GUI
-	--- @param setting mod_setting_number
+	--- @param setting mod_setting_better_number
 	--- @param gui gui
 	function S.mod_setting_number_integer(_, gui, _, _, setting)
 		local value, value_new = G.mod_setting_number(gui, setting)
