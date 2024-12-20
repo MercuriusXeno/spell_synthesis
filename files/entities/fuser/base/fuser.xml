@@ -8,8 +8,7 @@
 		execute_on_added="1"
 		call_init_function="1"
 		execute_on_removed="1"
-		vm_type="ONE_PER_COMPONENT_INSTANCE">
-	</LuaComponent>
+		vm_type="ONE_PER_COMPONENT_INSTANCE" />
 
 	<PixelSpriteComponent
 		image_file="mods/spell_synthesis/files/entities/fuser/gfx/anvil_sprite.png"
@@ -17,22 +16,19 @@
 		anchor_x="12"
 		anchor_y="12"
 		diggable="0"
-		create_box2d_bodies="1">
-	</PixelSpriteComponent>
+		create_box2d_bodies="1" />
 
 	<SpriteComponent
 		image_file="mods/spell_synthesis/files/entities/fuser/gfx/anvil_core.xml"
 		offset_x="5"
-		offset_y="5">
-	</SpriteComponent>
+		offset_y="5" />
 
 	<LightComponent
 		_tags="activate"
 		radius="15"
 		r="255"
 		g="255"
-		b="255">
-	</LightComponent>
+		b="255" />
 
 	<ParticleEmitterComponent
 		_tags="activate"
@@ -50,84 +46,70 @@
 		x_vel_min="-1"
 		x_vel_max="1"
 		y_vel_min="-1"
-		y_vel_max="1">
-	</ParticleEmitterComponent>
+		y_vel_max="1" />
 
 	<Entity name="fuser_light_top">
 		<Base file="mods/spell_synthesis/files/entities/fuser/base/fuser_light.xml">
 			<SpriteComponent
-				special_scale_x="5">
-			</SpriteComponent>
+				special_scale_x="5" />
 			<LightComponent
-				offset_x="2.5">
-			</LightComponent>
+				offset_x="2.5" />
 		</Base>
 
 		<InheritTransformComponent>
 			<Transform
 				position.x="-2"
-				position.y="-11">
-			</Transform>
+				position.y="-11" />
 		</InheritTransformComponent>
 	</Entity>
 
 	<Entity name="fuser_light_bottom">
 		<Base file="mods/spell_synthesis/files/entities/fuser/base/fuser_light.xml">
 			<SpriteComponent
-				special_scale_x="5">
-			</SpriteComponent>
+				special_scale_x="5" />
 			<LightComponent
-				offset_x="2.5">
-			</LightComponent>
+				offset_x="2.5" />
 		</Base>
 
 		<InheritTransformComponent>
 			<Transform
 				position.x="-2"
-				position.y="11">
-			</Transform>
+				position.y="11" />
 		</InheritTransformComponent>
 	</Entity>
 
 	<Entity name="fuser_light_left">
 		<Base file="mods/spell_synthesis/files/entities/fuser/base/fuser_light.xml">
 			<SpriteComponent
-				special_scale_y="5">
-			</SpriteComponent>
+				special_scale_y="5" />
 			<LightComponent
-				offset_y="2.5">
-			</LightComponent>
+				offset_y="2.5" />
 		</Base>
 
 		<InheritTransformComponent>
 			<Transform
 				position.x="-11"
-				position.y="-2">
-			</Transform>
+				position.y="-2" />
 		</InheritTransformComponent>
 	</Entity>
 
 	<Entity name="fuser_light_right">
 		<Base file="mods/spell_synthesis/files/entities/fuser/base/fuser_light.xml">
 			<SpriteComponent
-				special_scale_y="5">
-			</SpriteComponent>
+				special_scale_y="5" />
 			<LightComponent
-				offset_y="2.5">
-			</LightComponent>
+				offset_y="2.5" />
 		</Base>
 
 		<InheritTransformComponent>
 			<Transform
 				position.x="11"
-				position.y="-2">
-			</Transform>
+				position.y="-2" />
 		</InheritTransformComponent>
 	</Entity>
 
 	<AudioLoopComponent
 		_tags="activate"
 		file="mods/spell_synthesis/files/audio/bank/spell_synthesis.bank"
-		event_name="fuser/loop">
-	</AudioLoopComponent>
+		event_name="fuser/loop" />
 </Entity>
