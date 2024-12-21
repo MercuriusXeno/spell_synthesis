@@ -1,18 +1,15 @@
-<Entity name="$projectile_default" tags="projectile_player">
+<Entity name="$projectile_default">
 	<Base file="mods/spell_synthesis/files/spells/evolutions/digger/ss_digger_2.xml">
 		<ProjectileComponent>
 			<damage_by_type
-				drill="0.4">
-			</damage_by_type>
+				drill="0.4" />
 			<config_explosion
 				explosion_radius="8"
 				ray_energy="300000"
-				max_durability_to_destroy="11">
-			</config_explosion>
+				max_durability_to_destroy="11" />
 		</ProjectileComponent>
 
 		<VariableStorageComponent
-			value_string="mods/spell_synthesis/files/spells/evolutions/digger/ss_digger_3.xml">
-		</VariableStorageComponent>
+			value_string="mods/spell_synthesis/files/spells/evolutions/digger/ss_digger_3.xml" />
 	</Base>
 </Entity>

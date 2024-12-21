@@ -1,10 +1,9 @@
-<Entity name="$projectile_default" tags="projectile_player,disc_bullet">
+<Entity name="$projectile_default" tags="disc_bullet">
 	<Base file="data/entities/base_projectile.xml">
 		<VelocityComponent
 			gravity_y="250"
 			air_friction="0.6"
-			mass="0.05">
-		</VelocityComponent>
+			mass="0.05" />
 	</Base>
 
 	<ProjectileComponent
@@ -45,13 +44,11 @@
 		knockback_force="1.3"
 		physics_impulse_coeff="1500">
 		<damage_by_type
-			slice="0.9">
-		</damage_by_type>
+			slice="0.9" />
 	</ProjectileComponent>
 
 	<SpriteComponent
-		image_file="data/projectiles_gfx/disc_bullet.xml">
-	</SpriteComponent>
+		image_file="data/projectiles_gfx/disc_bullet.xml" />
 
 	<SpriteParticleEmitterComponent
 		sprite_file="data/particles/discbullet_trail.xml"
@@ -72,24 +69,20 @@
 		emission_interval_max_frames="5"
 		count_min="1" count_max="1"
 		is_emitting="1"
-		render_back="1">
-	</SpriteParticleEmitterComponent>
+		render_back="1" />
 
 	<AudioComponent
 		file="data/audio/Desktop/projectiles.bank"
-		event_root="player_projectiles/bullet_disc">
-	</AudioComponent>
+		event_root="player_projectiles/bullet_disc" />
 
 	<AudioLoopComponent
 		file="data/audio/Desktop/projectiles.bank"
 		event_name="player_projectiles/bullet_disc/loop"
 		set_speed_parameter="1"
-		auto_play="1">
-	</AudioLoopComponent>
+		auto_play="1" />
 
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/spell_synthesis/files/spells/evolutions/disc_bullet/disc_bullet_2.xml">
-	</VariableStorageComponent>
+		value_string="mods/spell_synthesis/files/spells/evolutions/disc_bullet/disc_bullet_2.xml" />
 
 </Entity>

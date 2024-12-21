@@ -1,10 +1,9 @@
-<Entity name="$projectile_default" tags="projectile_player">
+<Entity name="$projectile_default">
 	<Base file="data/entities/base_projectile.xml">
 		<VelocityComponent
 			air_friction="0.3"
 			gravity_y="200"
-			mass="0.08">
-		</VelocityComponent>
+			mass="0.08" />
 	</Base>
 
 	<ProjectileComponent
@@ -62,19 +61,16 @@
 			stains_enabled="1"
 			stains_radius="1"
 			spark_material="spark_green"
-			max_durability_to_destroy="12">
-		</config_explosion>
+			max_durability_to_destroy="12" />
 	</ProjectileComponent>
 
 	<SpriteComponent
 		image_file="data/projectiles_gfx/fireball_smaller_green.xml"
-		additive="1">
-	</SpriteComponent>
+		additive="1" />
 
 	<AudioComponent
 		file="data/audio/Desktop/projectiles.bank"
-		event_root="player_projectiles/bullet_heavy_fast">
-	</AudioComponent>
+		event_root="player_projectiles/bullet_heavy_fast" />
 
 	<ParticleEmitterComponent
 		emitted_material_name="spark_yellow"
@@ -104,8 +100,7 @@
 		render_on_grid="1"
 		emission_interval_min_frames="1"
 		emission_interval_max_frames="2"
-		is_emitting="1">
-	</ParticleEmitterComponent>
+		is_emitting="1" />
 
 	<ParticleEmitterComponent
 		emitted_material_name="spark_green"
@@ -135,15 +130,12 @@
 		render_on_grid="1"
 		emission_interval_min_frames="1"
 		emission_interval_max_frames="2"
-		is_emitting="1">
-	</ParticleEmitterComponent>
+		is_emitting="1" />
 
 	<LightComponent
-		radius="30">
-	</LightComponent>
+		radius="30" />
 
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/spell_synthesis/files/spells/evolutions/heavy_bullet/bullet_heavy_3.xml">
-	</VariableStorageComponent>
+		value_string="mods/spell_synthesis/files/spells/evolutions/heavy_bullet/bullet_heavy_3.xml" />
 </Entity>

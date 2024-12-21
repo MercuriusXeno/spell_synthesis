@@ -1,11 +1,10 @@
-<Entity name="$projectile_default" tags="projectile_player">
+<Entity name="$projectile_default">
 
 	<Base file="data/entities/base_projectile.xml">
 		<VelocityComponent
 			gravity_y="250"
 			air_friction="0.6"
-			mass="0.05">
-		</VelocityComponent>
+			mass="0.05" />
 	</Base>
 
 	<ProjectileComponent
@@ -43,8 +42,7 @@
 		knockback_force="1.6"
 		physics_impulse_coeff="2000">
 		<damage_by_type
-			slice="0.3">
-		</damage_by_type>
+			slice="0.3" />
 		<config_explosion
 			never_cache="1"
 			damage="0.0"
@@ -70,16 +68,14 @@
 			material_sparks_count_min="0"
 			light_enabled="0"
 			stains_enabled="1"
-			stains_radius="3">
-		</config_explosion>
+			stains_radius="3" />
 	</ProjectileComponent>
 
 	<SpriteComponent
 		alpha="1"
 		image_file="data/projectiles_gfx/bouncy_orb.xml"
 		next_rect_animation=""
-		rect_animation="">
-	</SpriteComponent>
+		rect_animation="" />
 
 	<ParticleEmitterComponent
 		emitted_material_name="plasma_fading"
@@ -109,8 +105,7 @@
 		emission_interval_min_frames="1"
 		emission_interval_max_frames="1"
 		fade_based_on_lifetime="1"
-		is_emitting="1">
-	</ParticleEmitterComponent>
+		is_emitting="1" />
 
 	<ParticleEmitterComponent
 		emitted_material_name="plasma_fading"
@@ -140,8 +135,7 @@
 		emission_interval_min_frames="1"
 		emission_interval_max_frames="1"
 		fade_based_on_lifetime="1"
-		is_emitting="1">
-	</ParticleEmitterComponent>
+		is_emitting="1" />
 
 	<ParticleEmitterComponent
 		emitted_material_name="plasma_fading"
@@ -171,8 +165,7 @@
 		emission_interval_max_frames="20"
 		emit_cosmetic_particles="1"
 		create_real_particles="0"
-		is_emitting="1">
-	</ParticleEmitterComponent>
+		is_emitting="1" />
 
 	<ParticleEmitterComponent
 		emitted_material_name="plasma_fading"
@@ -202,24 +195,20 @@
 		emission_interval_max_frames="10"
 		emit_cosmetic_particles="1"
 		create_real_particles="0"
-		is_emitting="1">
-	</ParticleEmitterComponent>
+		is_emitting="1" />
 
 	<AudioComponent
 		file="data/audio/Desktop/projectiles.bank"
-		event_root="player_projectiles/bullet_bouncy_orb">
-	</AudioComponent>
+		event_root="player_projectiles/bullet_bouncy_orb" />
 
 	<LightComponent
 		r="40"
 		g="240"
 		b="255"
-		radius="30">
-	</LightComponent>
+		radius="30" />
 
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/spell_synthesis/files/spells/evolutions/bouncy_orb/bouncy_orb_2.xml">
-	</VariableStorageComponent>
+		value_string="mods/spell_synthesis/files/spells/evolutions/bouncy_orb/bouncy_orb_2.xml" />
 
 </Entity>

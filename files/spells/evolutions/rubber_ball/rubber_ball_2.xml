@@ -1,14 +1,10 @@
-<Entity
-  name="$projectile_default" tags="projectile_player"
->
+<Entity name="$projectile_default">
 
   <Base file="data/entities/base_projectile.xml">
     <VelocityComponent
       gravity_y="250"
       air_friction="0.6"
-      mass="0.03"
-    >
-    </VelocityComponent>
+      mass="0.03" />
   </Base>
 
   <ProjectileComponent
@@ -52,9 +48,7 @@
   >
     <config_explosion
       damage="0"
-      explosion_radius="1"
-    >
-    </config_explosion>
+      explosion_radius="1" />
   </ProjectileComponent>
 
   <SpriteComponent
@@ -62,14 +56,11 @@
     alpha="1"
     image_file="data/projectiles_gfx/rubber_ball.xml"
     next_rect_animation=""
-    rect_animation=""
-  >
-  </SpriteComponent>
+    rect_animation="" />
 
   <AudioComponent
     file="data/audio/Desktop/projectiles.bank"
-    event_root="player_projectiles/bullet_rubber_ball">
-  </AudioComponent>
+    event_root="player_projectiles/bullet_rubber_ball" />
 
   <ParticleEmitterComponent
     emitted_material_name="plasma_fading_green"
@@ -99,13 +90,10 @@
     emission_interval_min_frames="1"
     emission_interval_max_frames="1"
     fade_based_on_lifetime="1"
-    is_emitting="1">
-  </ParticleEmitterComponent>
+    is_emitting="1" />
 
   <VariableStorageComponent
     name="projectile_file"
-    value_string="mods/spell_synthesis/files/spells/evolutions/rubber_ball/rubber_ball_2.xml"
-  >
-  </VariableStorageComponent>
+    value_string="mods/spell_synthesis/files/spells/evolutions/rubber_ball/rubber_ball_2.xml" />
 
 </Entity>

@@ -1,4 +1,4 @@
-<Entity>
+<Entity name="$projectile_default">
 	<Base file="data/entities/projectiles/deck/pollen.xml">
 		<ProjectileComponent
 			speed_min="250"

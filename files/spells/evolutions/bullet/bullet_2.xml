@@ -1,11 +1,10 @@
-<Entity name="$projectile_default" tags="projectile_player">
+<Entity name="$projectile_default">
 
   <Base file="data/entities/base_projectile.xml">
     <VelocityComponent
       gravity_y="200"
       air_friction="1"
-      mass="0.06">
-    </VelocityComponent>
+      mass="0.06" />
   </Base>
 
   <ProjectileComponent
@@ -64,9 +63,7 @@
       light_g="90"
       light_b="10"
       stains_enabled="1"
-      stains_radius="3"
-    >
-    </config_explosion>
+      stains_radius="3" />
   </ProjectileComponent>
 
   <SpriteComponent
@@ -75,9 +72,7 @@
     image_file="data/projectiles_gfx/light_arrow.xml"
     next_rect_animation=""
     rect_animation=""
-    additive="1"
-  >
-  </SpriteComponent>
+    additive="1" />
 
   <ParticleEmitterComponent
     emitted_material_name="spark_green"
@@ -107,28 +102,20 @@
     emission_interval_max_frames="1"
     emit_cosmetic_particles="1"
     create_real_particles="0"
-    is_emitting="1"
-  >
-  </ParticleEmitterComponent>
+    is_emitting="1" />
 
   <AudioComponent
     file="data/audio/Desktop/projectiles.bank"
-    event_root="player_projectiles/bullet"
-  >
-  </AudioComponent>
+    event_root="player_projectiles/bullet" />
 
   <LightComponent
     radius="40"
     r="40"
     g="120"
-    b="10"
-  >
-  </LightComponent>
+    b="10" />
 
   <VariableStorageComponent
     name="projectile_file"
-    value_string="mods/spell_synthesis/files/spells/evolutions/bullet/bullet_2.xml"
-  >
-  </VariableStorageComponent>
+    value_string="mods/spell_synthesis/files/spells/evolutions/bullet/bullet_2.xml" />
 
 </Entity>

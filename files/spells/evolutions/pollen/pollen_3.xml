@@ -1,4 +1,4 @@
-<Entity>
+<Entity name="$projectile_default">
 	<Base file="mods/spell_synthesis/files/spells/evolutions/pollen/pollen_2.xml">
 		<ProjectileComponent
 			speed_min="350"

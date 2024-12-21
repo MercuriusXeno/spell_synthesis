@@ -1,16 +1,14 @@
-<Entity>
+<Entity name="$projectile_default" tags="disc_bullet">
 	<Base file="mods/spell_synthesis/files/spells/evolutions/disc_bullet/disc_bullet_2.xml">
 		<ProjectileComponent
 			speed_min="750"
 			speed_max="850"
 			penetrate_entities="1">
 			<damage_by_type
-				slice="1.3">
-			</damage_by_type>
+				slice="1.3" />
 		</ProjectileComponent>
 
 		<VariableStorageComponent
-			value_string="mods/spell_synthesis/files/spells/evolutions/disc_bullet/disc_bullet_3.xml">
-		</VariableStorageComponent>
+			value_string="mods/spell_synthesis/files/spells/evolutions/disc_bullet/disc_bullet_3.xml" />
 	</Base>
 </Entity>

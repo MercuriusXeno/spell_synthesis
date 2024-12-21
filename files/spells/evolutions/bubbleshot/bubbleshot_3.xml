@@ -1,10 +1,9 @@
-<Entity name="$projectile_default" tags="projectile_player">
+<Entity name="$projectile_default">
 	<Base file="data/entities/base_projectile.xml">
 		<VelocityComponent
 			gravity_y="0"
 			air_friction="1.0"
-			mass="0.02">
-		</VelocityComponent>
+			mass="0.02" />
 	</Base>
 
 	<ProjectileComponent
@@ -59,32 +58,27 @@
 			material_sparks_count_min="0"
 			light_enabled="0"
 			stains_enabled="1"
-			stains_radius="3">
-		</config_explosion>
+			stains_radius="3" />
 	</ProjectileComponent>
 
 	<SpriteComponent
 		image_file="data/projectiles_gfx/background_cleaner.xml"
 		emissive="1"
-		additive="1">
-	</SpriteComponent>
+		additive="1" />
 
 	<AudioComponent
 		file="data/audio/Desktop/projectiles.bank"
-		event_root="player_projectiles/bullet_bubble">
-	</AudioComponent>
+		event_root="player_projectiles/bullet_bubble" />
 
 	<LightComponent
 		radius="60"
 		fade_out_time="0.1"
 		r="10"
 		g="40"
-		b="80">
-	</LightComponent>
+		b="80" />
 
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/spell_synthesis/files/spells/evolutions/bubbleshot/bubbleshot_3.xml">
-	</VariableStorageComponent>
+		value_string="mods/spell_synthesis/files/spells/evolutions/bubbleshot/bubbleshot_3.xml" />
 
 </Entity>

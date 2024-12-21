@@ -1,13 +1,11 @@
-<Entity name="$projectile_default" tags="projectile_player">
+<Entity name="$projectile_default">
 	<Base file="mods/spell_synthesis/files/spells/evolutions/buckshot/buckshot_2.xml">
 		<ProjectileComponent
 			speed_min="600"
 			speed_max="700"
-			damage="0.2">
-		</ProjectileComponent>
+			damage="0.2" />
 
 		<VariableStorageComponent
-			value_string="mods/spell_synthesis/files/spells/evolutions/buckshot/buckshot_3.xml">
-		</VariableStorageComponent>
+			value_string="mods/spell_synthesis/files/spells/evolutions/buckshot/buckshot_3.xml" />
 	</Base>
 </Entity>

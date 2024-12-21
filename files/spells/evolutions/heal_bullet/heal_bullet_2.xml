@@ -1,10 +1,9 @@
-<Entity name="$projectile_default" tags="projectile_player">
+<Entity name="$projectile_default">
 	<Base file="data/entities/base_projectile.xml">
 		<VelocityComponent
 			gravity_y="200"
 			air_friction="1.2"
-			mass="0.07">
-		</VelocityComponent>
+			mass="0.07" />
 	</Base>
 
 	<ProjectileComponent
@@ -64,11 +63,9 @@
 			light_fade_time="2"
 			stains_enabled="1"
 			stains_radius="3"
-			audio_enabled="0">
-		</config_explosion>
+			audio_enabled="0" />
 		<damage_by_type
-			healing="-0.35">
-		</damage_by_type>
+			healing="-0.35" />
 	</ProjectileComponent>
 
 	<ParticleEmitterComponent
@@ -93,8 +90,7 @@
 		emit_cosmetic_particles="1"
 		emission_interval_min_frames="0"
 		emission_interval_max_frames="1"
-		is_emitting="1">
-	</ParticleEmitterComponent>
+		is_emitting="1" />
 
 	<SpriteParticleEmitterComponent
 		sprite_file="data/particles/heal.xml"
@@ -124,29 +120,24 @@
 		randomize_velocity.min_x="-10"
 		randomize_velocity.max_x="10"
 		randomize_velocity.min_y="-10"
-		randomize_velocity.max_y="10">
-	</SpriteParticleEmitterComponent>
+		randomize_velocity.max_y="10" />
 
 	<AudioComponent
 		file="data/audio/Desktop/projectiles.bank"
-		event_root="player_projectiles/bullet">
-	</AudioComponent>
+		event_root="player_projectiles/bullet" />
 
 	<LightComponent
 		radius="40"
 		r="10"
 		g="40"
-		b="120">
-	</LightComponent>
+		b="120" />
 
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/spell_synthesis/files/spells/evolutions/heal_bullet/heal_bullet_2.xml">
-	</VariableStorageComponent>
+		value_string="mods/spell_synthesis/files/spells/evolutions/heal_bullet/heal_bullet_2.xml" />
 
 	<HitEffectComponent
 		effect_hit="LOAD_CHILD_ENTITY_LIMIT_TO_X"
 		value="6"
-		value_string="data/entities/misc/effect_healhurt.xml">
-	</HitEffectComponent>
+		value_string="data/entities/misc/effect_healhurt.xml" />
 </Entity>

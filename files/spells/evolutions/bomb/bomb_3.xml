@@ -1,14 +1,12 @@
-<Entity>
+<Entity name="$projectile_default">
 	<Base file="mods/spell_synthesis/files/spells/evolutions/bomb/bomb_2.xml">
 		<ProjectileComponent>
 			<config_explosion
 				ray_energy="8000000"
-				max_durability_to_destroy="13">
-      		</config_explosion>
+				max_durability_to_destroy="13" />
 		</ProjectileComponent>
 
 		<VariableStorageComponent
-			value_string="mods/spell_synthesis/files/spells/evolutions/bomb/bomb_3.xml">
-		</VariableStorageComponent>
+			value_string="mods/spell_synthesis/files/spells/evolutions/bomb/bomb_3.xml" />
 	</Base>
 </Entity>

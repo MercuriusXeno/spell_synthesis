@@ -1,10 +1,9 @@
-<Entity name="$projectile_default" tags="projectile_player">
+<Entity name="$projectile_default">
 	<Base file="data/entities/base_projectile.xml">
 		<VelocityComponent
 			gravity_y="250"
 			air_friction="0.8"
-			mass="0.35">
-		</VelocityComponent>
+			mass="0.35" />
 	</Base>
 
 	<ProjectileComponent
@@ -38,17 +37,14 @@
 		knockback_force="1.0"
 		physics_impulse_coeff="500">
 		<damage_by_type
-			slice="0.5">
-		</damage_by_type>
+			slice="0.5" />
 		<config_explosion
 			damage="0"
-			explosion_radius="1">
-		</config_explosion>
+			explosion_radius="1" />
 	</ProjectileComponent>
 
 	<SpriteComponent
-		image_file="data/projectiles_gfx/arrow.xml">
-	</SpriteComponent>
+		image_file="data/projectiles_gfx/arrow.xml" />
 
 	<ParticleEmitterComponent
 		emitted_material_name="spark_white"
@@ -78,16 +74,13 @@
 		emission_interval_max_frames="1"
 		emit_cosmetic_particles="1"
 		create_real_particles="0"
-		is_emitting="1">
-	</ParticleEmitterComponent>
+		is_emitting="1" />
 
 	<AudioComponent
 		file="data/audio/Desktop/projectiles.bank"
-		event_root="player_projectiles/bullet_arrow">
-	</AudioComponent>
+		event_root="player_projectiles/bullet_arrow" />
 
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/spell_synthesis/files/spells/evolutions/arrow/arrow_2.xml">
-	</VariableStorageComponent>
+		value_string="mods/spell_synthesis/files/spells/evolutions/arrow/arrow_2.xml" />
 </Entity>

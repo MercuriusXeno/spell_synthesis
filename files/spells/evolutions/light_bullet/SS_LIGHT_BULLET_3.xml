@@ -1,11 +1,10 @@
-<Entity name="$projectile_default" tags="projectile_player">
+<Entity name="$projectile_default">
 
 	<Base file="data/entities/base_projectile.xml">
 		<VelocityComponent
 			gravity_y="200"
 			air_friction="1.7"
-			mass="0.04">
-		</VelocityComponent>
+			mass="0.04" />
 	</Base>
 
 	<ProjectileComponent
@@ -55,16 +54,14 @@
 			material_sparks_count_min="0"
 			light_enabled="0"
 			stains_enabled="1"
-			stains_radius="3">
-		</config_explosion>
+			stains_radius="3" />
 	</ProjectileComponent>
 
 	<SpriteComponent
 		image_file="mods/spell_synthesis/files/spells/evolutions/light_bullet/spark_green.xml"
 		next_rect_animation="default"
 		rect_animation="default"
-		additive="1">
-	</SpriteComponent>
+		additive="1" />
 
 	<!-- dense emitter -->
 	<ParticleEmitterComponent
@@ -95,8 +92,7 @@
 		emission_interval_max_frames="1"
 		emit_cosmetic_particles="1"
 		create_real_particles="0"
-		is_emitting="1">
-	</ParticleEmitterComponent>
+		is_emitting="1" />
 
 	<!-- sparse emitter -->
 	<ParticleEmitterComponent
@@ -127,8 +123,7 @@
 		emission_interval_max_frames="10"
 		emit_cosmetic_particles="1"
 		create_real_particles="0"
-		is_emitting="1">
-	</ParticleEmitterComponent>
+		is_emitting="1" />
 
 	<!-- very sparse emitter -->
 	<ParticleEmitterComponent
@@ -159,25 +154,21 @@
 		emission_interval_max_frames="20"
 		emit_cosmetic_particles="1"
 		create_real_particles="0"
-		is_emitting="1">
-	</ParticleEmitterComponent>
+		is_emitting="1" />
 
 	<LightComponent
 		_enabled="1"
 		r="120"
 		g="255"
 		b="150"
-		radius="40">
-	</LightComponent>
+		radius="40" />
 
 	<AudioComponent
 		file="data/audio/Desktop/projectiles.bank"
-		event_root="player_projectiles/bullet_light">
-	</AudioComponent>
+		event_root="player_projectiles/bullet_light" />
 
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/spell_synthesis/files/spells/evolutions/light_bullet/SS_LIGHT_BULLET_2.xml">
-	</VariableStorageComponent>
+		value_string="mods/spell_synthesis/files/spells/evolutions/light_bullet/SS_LIGHT_BULLET_3.xml" />
 
 </Entity>

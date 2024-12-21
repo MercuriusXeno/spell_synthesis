@@ -1,10 +1,9 @@
-<Entity name="$projectile_default" tags="projectile_player">
+<Entity name="$projectile_default">
 	<Base file="data/entities/base_projectile.xml">
 		<VelocityComponent
 			air_friction="1"
 			gravity_y="0"
-			mass="0.09">
-		</VelocityComponent>
+			mass="0.09" />
 	</Base>
 
 	<ProjectileComponent
@@ -63,14 +62,12 @@
 			stains_radius="1"
 			spark_material="plasma_fading"
 			audio_enabled="0"
-			max_durability_to_destroy="11">
-		</config_explosion>
+			max_durability_to_destroy="11" />
 	</ProjectileComponent>
 
 	<SpriteComponent
 		image_file="data/projectiles_gfx/slow_bullet.xml"
-		additive="1">
-	</SpriteComponent>
+		additive="1" />
 
 	<ParticleEmitterComponent
 		emitted_material_name="plasma_fading"
@@ -98,23 +95,19 @@
 		emission_interval_min_frames="1"
 		emission_interval_max_frames="2"
 		fade_based_on_lifetime="1"
-		is_emitting="1">
-	</ParticleEmitterComponent>
+		is_emitting="1" />
 
 	<LightComponent
 		radius="30"
 		r="0"
 		g="40"
-		b="120">
-	</LightComponent>
+		b="120" />
 
 	<AudioComponent
 		file="data/audio/Desktop/projectiles.bank"
-		event_root="player_projectiles/bullet_heavy_slow">
-	</AudioComponent>
+		event_root="player_projectiles/bullet_heavy_slow" />
 
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/spell_synthesis/files/spells/evolutions/slow_bullet/bullet_slow_2.xml">
-	</VariableStorageComponent>
+		value_string="mods/spell_synthesis/files/spells/evolutions/slow_bullet/bullet_slow_2.xml" />
 </Entity>
