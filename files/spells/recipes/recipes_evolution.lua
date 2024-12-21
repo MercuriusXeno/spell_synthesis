@@ -143,6 +143,22 @@ local evolutions = {
 		spells = { "SS_DISC_BULLET_2", "SS_DISC_BULLET_2" },
 		result = { "SS_DISC_BULLET_3" },
 	},
+	{
+		spells = { "POLLEN", "POLLEN" },
+		result = { "SS_POLLEN_2" },
+	},
+	{
+		spells = { "SS_POLLEN_2", "SS_POLLEN_2" },
+		result = { "SS_POLLEN_3" },
+	},
+	{
+		spells = { "LASER_EMITTER", "LASER_EMITTER" },
+		result = { "SS_LASER_EMITTER_2" },
+	},
+	{
+		spells = { "SS_LASER_EMITTER_2", "SS_LASER_EMITTER_2" },
+		result = { "SS_LASER_EMITTER_3" },
+	},
 }
 
 local current_count = #SSRecipes
