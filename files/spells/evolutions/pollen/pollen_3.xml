@@ -1,0 +1,19 @@
+<Entity>
+	<Base file="mods/spell_synthesis/files/spells/evolutions/pollen/pollen_2.xml">
+		<ProjectileComponent
+			speed_min="350"
+			speed_max="450"
+			damage="0.5">
+			<config_explosion
+				damage="0.5"
+				explosion_radius="9"
+				ray_energy="500000" />
+		</ProjectileComponent>
+
+		<HomingComponent
+			homing_targeting_coeff="30" />
+
+		<VariableStorageComponent
+			value_string="mods/spell_synthesis/files/spells/evolutions/pollen/pollen_3.xml" />
+	</Base>
+</Entity>
