@@ -1,0 +1,17 @@
+<Entity>
+	<Base file="data/entities/projectiles/deck/orb_laseremitter.xml">
+		<LaserEmitterComponent>
+			<laser
+				damage_to_entities="0.13"
+				damage_to_cells="18000"
+				max_length="200"
+				beam_radius="1.8" />
+		</LaserEmitterComponent>
+
+		<ProjectileComponent
+			damage="0.85" />
+
+		<VariableStorageComponent
+			value_string="mods/spell_synthesis/files/spells/evolutions/laser_emitter/orb_laseremitter_2.xml" />
+	</Base>
+</Entity>

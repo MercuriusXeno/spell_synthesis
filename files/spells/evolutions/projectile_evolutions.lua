@@ -544,6 +544,42 @@ local spells = {
 			c.spread_degrees = c.spread_degrees + 20
 		end,
 	},
+	{ -- Plasma beam
+		id                  = "SS_LASER_EMITTER_2",
+		name                = "$action_laser_emitter",
+		description         = "$actiondesc_laser_emitter",
+		sprite              = sprite_generator:add_level_glow("data/ui_gfx/gun_actions/laser_emitter.png", 2),
+		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/laser_emitter/orb_laseremitter_2.xml", },
+		type                = ACTION_TYPE_PROJECTILE,
+		spawn_level         = "10",
+		spawn_probability   = "0",
+		price               = 180,
+		mana                = 80,
+		action              = function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/laser_emitter/orb_laseremitter_2.xml")
+			shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
+			c.fire_rate_wait = c.fire_rate_wait + 12
+			c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_disintegrated.xml,"
+		end,
+	},
+	{
+		id                  = "SS_LASER_EMITTER_3",
+		name                = "$action_laser_emitter",
+		description         = "$actiondesc_laser_emitter",
+		sprite              = sprite_generator:add_level_glow("data/ui_gfx/gun_actions/laser_emitter.png", 3),
+		related_projectiles = { "mods/spell_synthesis/files/spells/evolutions/laser_emitter/orb_laseremitter_3.xml", },
+		type                = ACTION_TYPE_PROJECTILE,
+		spawn_level         = "10",
+		spawn_probability   = "0",
+		price               = 180,
+		mana                = 100,
+		action              = function()
+			add_projectile("mods/spell_synthesis/files/spells/evolutions/laser_emitter/orb_laseremitter_3.xml")
+			shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
+			c.fire_rate_wait = c.fire_rate_wait + 20
+			c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_disintegrated.xml,"
+		end,
+	},
 }
 
 if actions then
