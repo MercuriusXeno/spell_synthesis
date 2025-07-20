@@ -1,7 +1,7 @@
 --- @class ss_fuser_animation_steps
 local fuse_steps_frames = {
-	up = 180,
-	side = 180,
+	up = 30,
+	side = 30,
 }
 
 -- Precompute steps

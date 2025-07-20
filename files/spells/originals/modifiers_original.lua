@@ -61,6 +61,60 @@ local spells = {
 			draw_actions(1, true)
 		end,
 	},
+	{ -- recharge
+		id          = "SS_ENERGIZE",
+		name 		= "ENERGIZE",
+		description = "Enhance a wand's speed and mana stability",
+		sprite 		= "mods/spell_synthesis/files/spells/originals/energize/energize_2.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "10",
+		spawn_probability                 = "0",
+		price = 300,
+		mana = -30,
+		custom_xml_file = "data/entities/misc/custom_cards/mana_reduce.xml",
+		action 		= function()
+			c.fire_rate_wait    = c.fire_rate_wait - 10
+			current_reload_time = current_reload_time - 20
+			draw_actions( 1, true )
+		end,
+	},
+	{
+		id          = "SS_ENERGIZE_2",
+		name 		= "ENERGIZE II",
+		description = "Further enhances a wand's speed and mana stability",
+		sprite 		= "mods/spell_synthesis/files/spells/originals/energize/energize_2.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "10",
+		spawn_probability                 = "0",
+		price = 300,
+		mana = -80,
+		custom_xml_file = "data/entities/misc/custom_cards/mana_reduce.xml",
+		action 		= function()
+			c.fire_rate_wait    = c.fire_rate_wait - 25
+			current_reload_time = current_reload_time - 50
+			draw_actions( 1, true )
+		end,
+	},
+	{
+		id          = "SS_ENERGIZE_3",
+		name 		= "ENERGIZE III",
+		description = "Greatly enhances a wand's speed and mana stability",
+		sprite 		= "mods/spell_synthesis/files/spells/originals/energize/energize_3.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "10",
+		spawn_probability                 = "0",
+		price = 300,
+		mana = -240,
+		custom_xml_file = "data/entities/misc/custom_cards/mana_reduce.xml",
+		action 		= function()
+			c.fire_rate_wait    = c.fire_rate_wait - 60
+			current_reload_time = current_reload_time - 120
+			draw_actions( 1, true )
+		end,
+	},
 }
 
 if actions then
