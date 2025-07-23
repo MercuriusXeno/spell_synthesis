@@ -1,5 +1,6 @@
 local spell_list = {
 	"mods/spell_synthesis/files/spells/evolutions/projectile_evolutions.lua",
+	"mods/spell_synthesis/files/spells/evolutions/modifiers_evolutions.lua",
 	"mods/spell_synthesis/files/spells/originals/projectiles_original.lua",
 	"mods/spell_synthesis/files/spells/originals/modifiers_original.lua",
 }

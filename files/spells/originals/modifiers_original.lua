@@ -61,11 +61,11 @@ local spells = {
 			draw_actions(1, true)
 		end,
 	},
-	{ -- recharge
+	{ -- recharge + mana reduce
 		id          = "SS_ENERGIZE",
 		name 		= "ENERGIZE",
 		description = "Enhance a wand's speed and mana stability",
-		sprite 		= "mods/spell_synthesis/files/spells/originals/energize/energize_2.png",
+		sprite 		= "mods/spell_synthesis/files/spells/originals/energize/energize.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
 		type 		= ACTION_TYPE_MODIFIER,
 		spawn_level                       = "10",
@@ -112,6 +112,23 @@ local spells = {
 		action 		= function()
 			c.fire_rate_wait    = c.fire_rate_wait - 60
 			current_reload_time = current_reload_time - 120
+			draw_actions( 1, true )
+		end,
+	},
+	{ -- auto-wisp
+		id          = "SS_WISP",
+		name 		= "WISP",
+		description = "Causes spells to be semi-permanent",
+		sprite 		= "mods/spell_synthesis/files/spells/originals/wisp/wisp.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+		related_extra_entities = { "mods/spell_synthesis/files/spells/originals/wisp/wisp.xml" },
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "10",
+		spawn_probability                 = "0",
+		price = 40,
+		mana = 120,
+		action 		= function()
+			c.extra_entities = c.extra_entities .. ",mods/spell_synthesis/files/spells/originals/wisp/wisp.xml,"
 			draw_actions( 1, true )
 		end,
 	},

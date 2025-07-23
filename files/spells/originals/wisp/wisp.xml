@@ -1,0 +1,7 @@
+<Entity>
+	<LuaComponent
+	execute_every_n_frame="1"
+	script_source_file="mods/spell_synthesis/files/spells/originals/wisp/force_wisp.lua"
+	/>
+</Entity>
+
