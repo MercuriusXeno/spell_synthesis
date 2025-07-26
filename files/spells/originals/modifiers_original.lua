@@ -132,6 +132,24 @@ local spells = {
 			draw_actions( 1, true )
 		end,
 	},
+	{
+		id          = "SS_HEELING_HOMING",
+		name 		= "HEELING HOMING",
+		description = "Causes spells to return to you between targets",
+		sprite 		= "mods/spell_synthesis/files/spells/originals/heeling_homing/heeling_homing.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
+		related_extra_entities = { "mods/spell_synthesis/files/spells/originals/heeling_homing/heeling_homing.xml",
+			"data/entities/particles/tinyspark_white_small.xml" },
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "10",
+		spawn_probability                 = "0",
+		price = 180,
+		mana = 90,
+		action 		= function()
+			c.extra_entities = c.extra_entities .. "mods/spell_synthesis/files/spells/originals/heeling_homing/heeling_homing.xml,data/entities/particles/tinyspark_white_small.xml,"
+			draw_actions( 1, true )
+		end,
+	},
 }
 
 if actions then

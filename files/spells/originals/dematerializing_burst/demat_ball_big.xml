@@ -1,0 +1,35 @@
+<Sprite 
+  default_animation="spawn" 
+  filename="mods/spell_synthesis/files/spells/originals/dematerializing_burst/demat_ball_big.png" 
+  offset_x="0" 
+  offset_y="0" >
+
+  <RectAnimation 
+    frame_count="12" 
+    frame_height="40" 
+    frame_wait="0.06" 
+    frame_width="40" 
+    frames_per_row="13" 
+    loop="0" 
+    name="spawn" 
+    next_animation="dematball" 
+    pos_x="0" 
+    pos_y="1" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="2" 
+    frame_height="40" 
+    frame_wait="0.01" 
+    frame_width="40" 
+    frames_per_row="13" 
+    name="dematball" 
+    pos_x="0" 
+    pos_y="1" 
+    shrink_by_one_pixel="1" >
+
+  </RectAnimation>
+
+</Sprite>
+

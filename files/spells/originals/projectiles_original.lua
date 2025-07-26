@@ -36,55 +36,7 @@ local spells = {
 			c.fire_rate_wait = c.fire_rate_wait + 150
 			current_reload_time = current_reload_time + 50
 			shot_effects.recoil_knockback = 180.0
-		end,
-	},
-	{
-		id                  = "SS_EXCAVATING_BURST",
-		name                = "EXCAVATING BURST",
-		description         = "Wide area blast of digging force",
-		sprite              = "mods/spell_synthesis/files/spells/originals/excavating_burst/excavating_burst.png",
-		related_projectiles = { "mods/spell_synthesis/files/spells/originals/excavating_burst/excavating_burst.xml", },
-		type                = ACTION_TYPE_PROJECTILE,
-		spawn_level         = "10",
-		spawn_probability   = "0",
-		mana                = 16,
-		sound_loop_tag      = "sound_digger",
-		action              = function()
-			add_projectile("mods/spell_synthesis/files/spells/originals/excavating_burst/excavating_burst.xml")
-			current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10
-		end,
-	},
-	{
-		id                  = "SS_EXCAVATING_BURST_2",
-		name                = "EXCAVATING BURST II",
-		description         = "Wider, stronger area blast of digging force",
-		sprite              = "mods/spell_synthesis/files/spells/originals/excavating_burst/excavating_burst_2.png",
-		related_projectiles = { "mods/spell_synthesis/files/spells/originals/excavating_burst/excavating_burst_2.xml", },
-		type                = ACTION_TYPE_PROJECTILE,
-		spawn_level         = "10",
-		spawn_probability   = "0",
-		mana                = 20,
-		sound_loop_tag      = "sound_digger",
-		action              = function()
-			add_projectile("mods/spell_synthesis/files/spells/originals/excavating_burst/excavating_burst_2.xml")
-			current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10
-		end,
-	},
-	{
-		id                  = "SS_EXCAVATING_BURST_3",
-		name                = "EXCAVATING BURST III",
-		description         = "Massive area blast of digging force",
-		sprite              = "mods/spell_synthesis/files/spells/originals/excavating_burst/excavating_burst_3.png",
-		related_projectiles = { "mods/spell_synthesis/files/spells/originals/excavating_burst/excavating_burst_3.xml", },
-		type                = ACTION_TYPE_PROJECTILE,
-		spawn_level         = "10",
-		spawn_probability   = "0",
-		mana                = 24,
-		sound_loop_tag      = "sound_digger",
-		action              = function()
-			add_projectile("mods/spell_synthesis/files/spells/originals/excavating_burst/excavating_burst_3.xml")
-			current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10
-		end,
+		end,	
 	},
 	{
 		id                  = "SS_DEMATERIALIZING_BURST",
@@ -95,7 +47,7 @@ local spells = {
 		type                = ACTION_TYPE_PROJECTILE,
 		spawn_level         = "10",
 		spawn_probability   = "0",
-		mana                = 30,
+		mana                = 60,
 		sound_loop_tag      = "sound_digger",
 		action              = function()
 			add_projectile("mods/spell_synthesis/files/spells/originals/dematerializing_burst/dematerializing_burst.xml")

@@ -28,16 +28,12 @@ local fusions = {
 		result = { "SS_WISP" },
 	},
 	{
-		spells = { "DIGGER", "BULLET_SLOW" },
-		result = { "SS_EXCAVATING_BURST" },
+		spells = { "EXPLOSION_LIGHT", "BLACK_HOLE" },
+		result = { "SS_DEMATERIALIZING_BURST" },
 	},
 	{
-		spells = { "SS_DIGGER_2", "SS_BULLET_SLOW_2" },
-		result = { "SS_EXCAVATING_BURST_2" },
-	},
-	{
-		spells = { "SS_DIGGER_3", "SS_BULLET_SLOW_3" },
-		result = { "SS_EXCAVATING_BURST_3" },
+		spells = { "HOMING", "HOMING_SHOOTER" },
+		result = { "SS_HEELING_HOMING" },
 	},
 }
 

@@ -230,15 +230,7 @@ local evolutions = {
 	{
 		spells = { "SS_LIFETIME_2", "SS_LIFETIME_2" },
 		result = { "SS_LIFETIME_3" },
-	},
-	{
-		spells = { "SS_EXCAVATING_BURST", "SS_EXCAVATING_BURST" },
-		result = { "SS_EXCAVATING_BURST_2" },
-	},
-	{
-		spells = { "SS_EXCAVATING_BURST_2", "SS_EXCAVATING_BURST_2" },
-		result = { "SS_EXCAVATING_BURST_3" },
-	},
+	}
 }
 
 local current_count = #SSRecipes
