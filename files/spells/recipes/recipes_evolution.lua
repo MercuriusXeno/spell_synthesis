@@ -8,6 +8,14 @@ local evolutions = {
 		result = { "SS_LIGHT_BULLET_3" },
 	},
 	{
+		spells = { "BOUNCY_ORB", "BOUNCY_ORB" },
+		result = { "SS_BOUNCY_ORB_2" },
+	},
+	{
+		spells = { "SS_BOUNCY_ORB_2", "SS_BOUNCY_ORB_2" },
+		result = { "SS_BOUNCY_ORB_3" },
+	},
+	{
 		spells = { "DIGGER", "DIGGER" },
 		result = { "SS_DIGGER_2" },
 	},
